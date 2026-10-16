@@ -41,8 +41,13 @@ I build hands-on security skills on TryHackMe. Figures as of 15 October 2026.
 ## Projects
 
 Projects are added here as I start them, and each is built in the open: the
-commit history shows the work as it happens. No projects have been published
-yet. The first, Project Manager in a Box, is next.
+commit history shows the work as it happens.
+
+- **[Foundations](foundations/)** (in progress): how I learned Python for
+  security. My thirteen Python exercises are published; the write-up of the
+  coding environment I built is being polished and comes next.
+
+Project Manager in a Box is the next project.
 
 ## Roadmap
 
@@ -71,8 +76,6 @@ it.
 
 Alongside these:
 
-- **Foundations:** how I learned Python for security: the coding environment
-  I built, then the exercises I wrote in it.
 - **TryHackMe write-ups:** skill summaries from retired rooms, with no flags
   or answers.
 - Two short practice exercises (a file integrity checker and a local port
