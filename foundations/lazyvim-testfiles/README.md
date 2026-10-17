@@ -5,6 +5,10 @@ coding environment described in [Foundations](../README.md) works for each
 language. They are throwaway tests, not examples of my coding. An AI assistant
 helped draft them, as it did the setup they test.
 
+I checked every file on macOS (Python 3.13, Node 26, Java 21 and gcc). The
+runner commands should also work on Linux, but I have not tested them there,
+and Windows is not covered.
+
 Every file is self-contained: no input, no network, no personal data. The only
 file work is `folder_check.py`, which writes one tiny temporary file next to
 itself and deletes it. Open a file in your editor, press F5, and compare the
