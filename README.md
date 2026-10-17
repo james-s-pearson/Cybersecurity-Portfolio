@@ -44,8 +44,9 @@ Projects are added here as I start them, and each is built in the open: the
 commit history shows the work as it happens.
 
 - **[Foundations](foundations/)** (in progress): how I learned Python for
-  security. My thirteen Python exercises are published; the write-up of the
-  coding environment I built is being polished and comes next.
+  security. My thirteen Python exercises and the safe test files for my
+  coding environment are published; the write-up of that environment is being
+  polished and comes next.
 
 Project Manager in a Box is the next project.
 

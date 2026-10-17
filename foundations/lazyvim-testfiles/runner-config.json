@@ -1,0 +1,17 @@
+{
+  "name": "node-test-runner",
+  "version": "1.0.0",
+  "command": "node",
+  "args": [
+    "--experimental-modules",
+    "index.js"
+  ],
+  "env": {
+    "NODE_ENV": "development",
+    "PORT": "3000"
+  },
+  "options": {
+    "cwd": "./src",
+    "timeout": 5000
+  }
+}

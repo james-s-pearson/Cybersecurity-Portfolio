@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Live Server Test Page</title>
+    <style>
+        :root {
+            --bg-color: #f4f7f6;
+            --text-color: #333;
+            --accent-color: #00b4d8;
+            --card-bg: #ffffff;
+        }
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --bg-color: #1a1a1a;
+                --text-color: #f4f7f6;
+                --card-bg: #2d2d2d;
+            }
+        }
+        body {
+            font-family: system-ui, -apple-system, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            transition: background-color 0.3s;
+        }
+        .container {
+            text-align: center;
+            padding: 2.5rem;
+            background: var(--card-bg);
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            max-width: 400px;
+        }
+        h1 {
+            color: var(--accent-color);
+            margin-top: 0;
+        }
+        .status {
+            font-weight: bold;
+            color: #2ec4b6;
+        }
+        .instructions {
+            font-size: 0.9rem;
+            opacity: 0.8;
+            line-height: 1.5;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>🚀 Hello World! My Live Server is Working!</h1>
+        <p>Status: <span class="status">Online & Connected</span></p>
+        <hr style="border: 0; border-top: 1px solid var(--bg-color); margin: 1.5rem 0;">
+        <p class="instructions">
+            <strong>How to test auto-refresh:</strong> Change the text of the heading above in your editor and hit <strong>Save</strong>. The browser should update instantly without a manual reload.
+        </p>
+        <p id="time-log" style="font-size: 0.8rem; opacity: 0.6;"></p>
+    </div>
+
+    <script>
+        // Confirms JavaScript runs properly and tracks initial load time
+        const now = new Date();
+        document.getElementById('time-log').innerText = `Page initialized at: ${now.toLocaleTimeString()}`;
+        console.log("Live Server test file successfully loaded.");
+    </script>
+</body>
+</html>

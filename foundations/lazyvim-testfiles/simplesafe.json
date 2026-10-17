@@ -1,0 +1,13 @@
+{
+  "test_id": 101,
+  "runner_status": "active",
+  "configuration": {
+    "environment": "staging",
+    "timeout_seconds": 30
+  },
+  "target_modules": [
+    "auth",
+    "database",
+    "logger"
+  ]
+}

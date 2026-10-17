@@ -17,7 +17,8 @@ it, testing every language, catching conflicts and deciding what to keep. The
 write-up is honest about what worked and what broke.
 
 The write-up of how I built it is being polished and will be added to this
-folder next.
+folder next. The safe test files I used to check each language are already
+here: [lazyvim-testfiles](lazyvim-testfiles/).
 
 ## 2. The Python exercises
 
