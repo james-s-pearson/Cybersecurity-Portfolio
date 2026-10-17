@@ -5,8 +5,10 @@ coding environment described in [Foundations](../README.md) works for each
 language. They are throwaway tests, not examples of my coding. An AI assistant
 helped draft them, as it did the setup they test.
 
-Every file is self-contained: no input, no network, no personal data. Open one
-in your editor, press F5, and compare the result with the list below.
+Every file is self-contained: no input, no network, no personal data. The only
+file work is `folder_check.py`, which writes one tiny temporary file next to
+itself and deletes it. Open a file in your editor, press F5, and compare the
+result with the list below.
 
 ## What to expect
 
@@ -14,6 +16,13 @@ in your editor, press F5, and compare the result with the list below.
   `<leader>rh` or `Ctrl+/`). F5 prints a separator line, then
   `--- Python Runner Test Start ---`, a version and timestamp,
   `Math Check: 5 + 10 = 15`, `Logic Check: PASSED`, and an end line.
+- `folder_check.py`: Python through IPython (optional). It checks that F5 runs
+  your script from the script's own folder. Expect these lines, in order:
+  `--- Folder Check Start ---`, `Script folder: ` plus the folder's name,
+  `Relative file landed in the script folder: yes`, `Folder Check: PASSED`
+  and `--- Folder Check End ---`. It writes `folder_check.tmp` and deletes it
+  before it ends. Run with plain `python3` from some other folder, it prints
+  `FAILED` instead, which shows the check can fail.
 - `firstprog.c`: C. F5 compiles it with `gcc` and prints `Hello, world!` ten
   times, each followed by a blank line (the string already ends in a newline,
   and `puts` adds another). It leaves `firstprog.out` behind.
