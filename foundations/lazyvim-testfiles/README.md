@@ -6,8 +6,11 @@ language. They are throwaway tests, not examples of my coding. An AI assistant
 helped draft them, as it did the setup they test.
 
 I checked every file on macOS (Python 3.13, Node 26, Java 21 and gcc). The
-runner commands should also work on Linux, but I have not tested them there,
-and Windows is not covered.
+runner should also work on Linux (an earlier partial test on Ubuntu-like Linux
+needed one shell fix, described in Step 4 of the [companion
+guide](https://github.com/james-s-pearson/Cybersecurity-Portfolio/blob/main/foundations/lazyvim-ide/lazyvim-playground-howto.md)),
+but the install steps and these exact files were not verified there. Windows
+is not covered.
 
 Every file is self-contained: no input, no network, no personal data. The only
 file work is `folder_check.py`, which writes one tiny temporary file next to
@@ -16,8 +19,8 @@ result with the list below.
 
 ## Files that should run cleanly
 
-- `hello.py`: Python through IPython. Open a Python shell first (`<leader>rv`,
-  `<leader>rh` or `Ctrl+/`). F5 prints a separator line, then
+- `hello.py`: Python through IPython. Open a Python shell first (`<leader>rv`
+  or `<leader>rh`). F5 prints a separator line, then
   `--- Python Runner Test Start ---`, a version and timestamp,
   `Math Check: 5 + 10 = 15`, `Logic Check: PASSED`, and an end line.
 - `folder_check.py`: Python through IPython (optional). It checks that F5 runs
