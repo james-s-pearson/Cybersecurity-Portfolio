@@ -1,0 +1,8 @@
+/* Formatting test: this file is deliberately messy but valid CSS.
+   Format it with <leader>cf (Prettier). */
+body{margin:0;font-family:system-ui,sans-serif}
+.card   {
+background:#FFF;color:#333;padding:1rem
+}
+h1,h2{color:#00B4D8;margin-top:0}
+@media (max-width:600px){.card{padding:.5rem}}

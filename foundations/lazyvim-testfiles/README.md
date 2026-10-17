@@ -14,7 +14,7 @@ file work is `folder_check.py`, which writes one tiny temporary file next to
 itself and deletes it. Open a file in your editor, press F5, and compare the
 result with the list below.
 
-## What to expect
+## Files that should run cleanly
 
 - `hello.py`: Python through IPython. Open a Python shell first (`<leader>rv`,
   `<leader>rh` or `Ctrl+/`). F5 prints a separator line, then
@@ -27,29 +27,54 @@ result with the list below.
   and `--- Folder Check End ---`. It writes `folder_check.tmp` and deletes it
   before it ends. Run with plain `python3` from some other folder, it prints
   `FAILED` instead, which shows the check can fail.
-- `firstprog.c`: C. F5 compiles it with `gcc` and prints `Hello, world!` ten
+- `hello.c`: C. F5 compiles it with `gcc` and prints `Hello, world!` ten
   times, each followed by a blank line (the string already ends in a newline,
-  and `puts` adds another). It leaves `firstprog.out` behind.
-- `Main.java`: Java. F5 compiles into a temporary folder, runs it and deletes
+  and `puts` adds another). It leaves `hello.out` behind.
+- `Hello.java`: Java. F5 compiles into a temporary folder, runs it and deletes
   the folder. Expect `Java Runner Test: SUCCESS` and `No arguments passed.`
-- `firstjs.js` and `lvtext.js`: JavaScript through Node. F5 prints a start
-  line, `Status: Success`, a timestamp and a passed logic check (`firstjs.js`),
-  or a numbered list of plugin names (`lvtext.js`).
-- `index.js`: Node again. It reads the JSON files in its own folder and
-  reports the settings it finds in `runner-config.json`: environment
-  `development`, port `3000`, and no errors.
-- `index.html`: a web page. F5 starts a Live Server and opens it in your
-  browser. Edit the heading, save, and the page should refresh by itself.
-- `runner-config.json` and `simplesafe.json`: JSON. F5 prints
-  `JSON Structure is Valid!`. Break a comma on purpose to see a
-  `JSON Error` message. `index.js` reads `runner-config.json`, so keep the two
-  together.
+- `hello.js`: JavaScript through Node. F5 prints a start line,
+  `Status: Success`, your Node version, `Unicode Check: ✅ 🚀` (if the two
+  symbols show as boxes, your terminal font needs fixing), a timestamp, a
+  passed logic check and an end line. It has a commented-out error line.
+- `valid.json`: JSON. F5 prints `JSON Structure is Valid!`.
+- `index.html` and `style.css`: a web page. F5 on `index.html` starts a Live
+  Server and opens it in your browser. Edit the heading, save, and the page
+  should refresh by itself. Then change the accent colour on line 4 of
+  `style.css` (`--accent-color: #00b4d8;`), for example to `#e63946`. Keep the
+  `#` and the `;`, change only that line, save, and the heading colour should
+  change.
+
+## Files that are meant to fail
+
+Each one has a comment saying so. The point is to see how your setup shows an
+error, so you know what a real failure looks like.
+
+- `broken.c`: F5 shows a compiler error for the missing semicolon, with the
+  file name and line number (`broken.c:6`), and runs nothing. The exact words
+  depend on your compiler; on macOS it reads
+  `expected ';' after expression`.
+- `Broken.java`: F5 shows `Broken.java:5: error: ';' expected` and runs
+  nothing. It leaves no files behind.
+- `broken.json`: F5 prints `JSON Error:` and a message that starts
+  `Expected ',' or '}' after property value in JSON`, with the position (line
+  4, column 3). The message includes the file's full path, so crop it before
+  you share a screenshot.
+
+## Files for trying the formatters
+
+Both are deliberately messy but valid. In this setup, saving does not format
+(auto-format on save is off), so they stay messy until you press `<leader>cf`.
+
+- `format_me.py`: formatted by Black. F5 prints `Total: 5` and
+  `Config: {'name': 'format_me', 'version': 1}`, before and after formatting.
+- `format_me.css`: formatted by Prettier. It is not meant to be run; F5 on a
+  `.css` file opens the raw stylesheet in the Live Server, not a page.
 
 ## Things to know
 
-- The first time you press F5 on `firstprog.c`, `Main.java` or a JavaScript
-  file with no shell open, the runner opens a new shell split for you.
-- `lvtext.js` and `hello.py` each have a commented-out error line. Remove the
+- The first time you press F5 on a C, Java, JavaScript or JSON file with no
+  shell open, the runner opens a new shell split for you.
+- `hello.py` and `hello.js` each have a commented-out error line. Remove the
   comment markers to see how your setup shows a failed run.
 - Compiled output is ignored by Git (see `.gitignore`), so running the tests
   does not dirty your clone.

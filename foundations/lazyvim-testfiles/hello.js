@@ -7,6 +7,8 @@ console.log("--- Program Runner Test Start ---");
 
 // 1. Basic Output Test
 console.log("Status: Success");
+console.log(`Node Version: ${process.version}`);
+console.log("Unicode Check: ✅ 🚀");
 
 // 2. Environment / Time Test
 const now = new Date();
@@ -28,5 +30,8 @@ if (result === 15) {
 } else {
     console.log("Logic Check: FAILED");
 }
+
+// Uncomment the next line to see how your runner shows an error.
+// throw new Error("Intentional test error");
 
 console.log("--- Program Runner Test End ---");

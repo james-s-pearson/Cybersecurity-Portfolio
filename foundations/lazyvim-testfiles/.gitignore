@@ -1,6 +1,5 @@
 # Output created by running the test files
 *.out
 *.class
-/firstprog
 # Temporary file written by folder_check.py
 folder_check.tmp

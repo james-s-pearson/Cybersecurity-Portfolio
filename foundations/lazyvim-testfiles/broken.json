@@ -1,0 +1,5 @@
+{
+  "note": "Deliberately broken: the missing comma below is the point",
+  "status": "invalid"
+  "expected": "F5 shows a JSON Error message"
+}
