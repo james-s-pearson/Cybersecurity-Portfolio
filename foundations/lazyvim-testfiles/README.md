@@ -50,10 +50,12 @@ result with the list below.
   a live preview in your browser (a table, a task list, a code block and a
   callout block). Open both files and press F5 in each. Open the second one in
   a split with `:vsplit notes-b.markdown`, or in the same window with
-  `:edit notes-b.markdown`: either way each file gets its own browser tab.
-  `<leader>cp` stops every preview at once. The browser preview shows a
-  callout block (`> [!NOTE]`) as a plain quote, while the editor shows it as
-  a "Note" box. This is a known limit of the preview plugin.
+  `:edit notes-b.markdown`: either way each file gets its own browser tab
+  (the `:edit` case needs the optional `mkdp_auto_close` line from Step 8 of
+  the guide). `<leader>cp` stops every preview at once. The browser preview
+  shows a callout block (`> [!NOTE]`) as a plain quote, while the editor
+  shows it as a "Note" box. This is a known limit of the preview plugin,
+  which I expect to replace later.
 
 ## Files that are meant to fail
 
