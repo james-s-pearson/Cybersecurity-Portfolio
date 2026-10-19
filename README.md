@@ -12,16 +12,25 @@ I am James Pearson, a PMP-certified project manager and Certified ScrumMaster
 with a background in client success, consulting and delivery, moving into
 cybersecurity. I am focusing on security project and program management, and
 on customer-facing roles at security and GRC (governance, risk and
-compliance) software companies. I am studying for CompTIA Security+. Longer
+compliance) software companies. I am studying for the CompTIA Security+. Longer
 term I am interested in penetration testing and web application security.
 
 This repository shows both halves of that combination: security work run as a
 well-managed project, and security knowledge applied with code.
 
-I use AI openly. For the Python projects, I write the code myself, and an AI
-assistant (Claude) only gives hints and reviews my work. For documents such as
-Project Manager in a Box, I direct the design and an AI assistant generates
-drafts that I review and edit. Each project's README says which applies.
+My hands-on cybersecurity learning includes working through security
+fundamentals, practising on TryHackMe and building a coding environment for the
+languages and formats that show up throughout security work. [The story of
+building it](foundations/lazyvim-ide/lazyvim-playground-story.md) shows how I
+test, document and use AI along the way.
+
+I use AI openly, and the scope of its use depends on the deliverable. Where the
+code itself is the deliverable, as in my Python exercises and projects, I write
+it myself, and an AI assistant (Claude) only gives hints and reviews my work.
+Where the project is the deliverable, as with my LazyVim coding environment
+and Project Manager in a Box, an AI assistant drafts the code or documents,
+and I direct, test and edit them. Each project's README explains how AI was
+used.
 
 - LinkedIn: [linkedin.com/in/jamespearson1562](https://www.linkedin.com/in/jamespearson1562)
 - GitHub: [james-s-pearson](https://github.com/james-s-pearson)
