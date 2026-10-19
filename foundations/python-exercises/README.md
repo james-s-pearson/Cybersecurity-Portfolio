@@ -1,7 +1,8 @@
 # Python Exercises
 
 Thirteen exercises from a Python course, written in a LazyVim environment I
-built for the purpose (its write-up will be added to this folder next). The
+built ([the story](../lazyvim-ide/lazyvim-playground-story.md)
+and [the guide](../lazyvim-ide/lazyvim-playground-howto.md) explain how). The
 course's own exercise text and solutions are not included: each exercise is
 described in my own words.
 
