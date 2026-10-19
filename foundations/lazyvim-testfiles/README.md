@@ -46,11 +46,21 @@ result with the list below.
   `style.css` (`--accent-color: #00b4d8;`), for example to `#e63946`. Keep the
   `#` and the `;`, change only that line, save, and the heading colour should
   change.
+- `notes-a.md` and `notes-b.markdown`: Markdown. F5 saves the file and opens
+  a live preview in your browser (a table, a task list, a code block and a
+  callout block). Open both files and press F5 in each. Open the second one in
+  a split with `:vsplit notes-b.markdown`, or in the same window with
+  `:edit notes-b.markdown`: either way each file gets its own browser tab.
+  `<leader>cp` stops every preview at once. The browser preview shows a
+  callout block (`> [!NOTE]`) as a plain quote, while the editor shows it as
+  a "Note" box. This is a known limit of the preview plugin.
 
 ## Files that are meant to fail
 
 Each one has a comment saying so. The point is to see how your setup shows an
-error, so you know what a real failure looks like.
+error, so you know what a real failure looks like. The compiler and
+JSON error messages print the file's full path, which includes your username,
+so crop it before you share a screenshot.
 
 - `broken.c`: F5 shows a compiler error for the missing semicolon, with the
   file name and line number (`broken.c:6`), and runs nothing. The exact words
@@ -60,8 +70,7 @@ error, so you know what a real failure looks like.
   nothing. It leaves no files behind.
 - `broken.json`: F5 prints `JSON Error:` and a message that starts
   `Expected ',' or '}' after property value in JSON`, with the position (line
-  4, column 3). The message includes the file's full path, so crop it before
-  you share a screenshot.
+  4, column 3).
 
 ## Files for trying the formatters
 
