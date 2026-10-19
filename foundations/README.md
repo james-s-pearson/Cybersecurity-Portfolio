@@ -16,9 +16,11 @@ An AI assistant drafted most of the Lua configuration. My part was directing
 it, testing every language, catching conflicts and deciding what to keep. The
 write-up is honest about what worked and what broke.
 
-The write-up of how I built it is being polished and will be added to this
-folder next. The safe test files I used to check each language are already
-here: [lazyvim-testfiles](lazyvim-testfiles/).
+The write-ups are here: a
+[how-to guide](lazyvim-ide/lazyvim-playground-howto.md) for building the same
+setup, and [the story](lazyvim-ide/lazyvim-playground-story.md) of how it came
+together. The safe test files I used to check each language are here too:
+[lazyvim-testfiles](lazyvim-testfiles/).
 
 ## 2. The Python exercises
 
