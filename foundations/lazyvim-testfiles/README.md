@@ -56,6 +56,10 @@ result with the list below.
   shows a callout block (`> [!NOTE]`) as a plain quote, while the editor
   shows it as a "Note" box. This is a known limit of the preview plugin,
   which I expect to replace later.
+- `hello.md`: a fuller Markdown test. F5 opens a live preview with bold and
+  italic text, a table, a code block, a task list, emoji, a callout block and
+  a footnote. A second Markdown file opened in the same window gets its own
+  tab, and `<leader>cp` stops every preview.
 
 ## Files that are meant to fail
 
