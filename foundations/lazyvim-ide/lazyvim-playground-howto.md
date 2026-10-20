@@ -517,7 +517,7 @@ vim.opt.winbar = "%=%m %F"
 
 ## Step 7: Test every language
 
-Restart Neovim (`:qa`, then `nvim`). You need a few small files to run. I published a set of safe test files, one per language, in [`lazyvim-testfiles`](https://github.com/james-s-pearson/Cybersecurity-Portfolio/tree/main/foundations/lazyvim-testfiles). They are throwaway tests, not examples of my coding, and an AI assistant helped draft them, as it did the setup they test. Every file is self-contained: no input, no network, no personal data.
+Restart Neovim (`:qa`, then `nvim`). You need a few small files to run. I published a set of safe test files, one per language, in [`lazyvim-testfiles`](https://github.com/james-s-pearson/Cybersecurity-Portfolio/tree/main/foundations/lazyvim-ide/lazyvim-testfiles). They are throwaway tests, not examples of my coding, and an AI assistant helped draft them, as it did the setup they test. Every file is self-contained: no input, no network, no personal data.
 
 > **Where this was checked:** on macOS. The runner should also work on Linux (an earlier partial test on Ubuntu-like Linux needed one shell fix, noted in Step 4), but the install steps and these exact test files weren't verified there. Windows isn't covered.
 
@@ -525,10 +525,10 @@ Restart Neovim (`:qa`, then `nvim`). You need a few small files to run. I publis
 
 ```zsh
 git clone https://github.com/james-s-pearson/Cybersecurity-Portfolio.git
-cd Cybersecurity-Portfolio/foundations/lazyvim-testfiles
+cd Cybersecurity-Portfolio/foundations/lazyvim-ide/lazyvim-testfiles
 ```
 
-or on the repository page choose **Code → Download ZIP**, unzip it, and open the `foundations/lazyvim-testfiles` folder.
+or on the repository page choose **Code → Download ZIP**, unzip it, and open the `foundations/lazyvim-ide/lazyvim-testfiles` folder.
 
 Open each file below in Neovim and press **F5**. If a test fails because a tool is missing (`gcc`, `javac`, `node`, `live-server` or `ipython`), go back to Step 4 and install it; the file is not the problem. The first time you press F5 on a C, Java, JavaScript or JSON file with no shell open, the runner opens a new shell split for you.
 
@@ -674,7 +674,7 @@ The cost: previews stay open until you close their tabs or press `Space c p`, so
 - The browser preview shows `> [!NOTE]` and `> [!WARNING]` callouts as plain quotes. The editor view shows them as "Note" and "Warning" boxes. I'm accepting that for now, and I expect to replace this plugin with a more actively maintained one later (something like `live-server`, which the HTML runner already uses).
 - The last commit to `markdown-preview.nvim` was in October 2023, as I write this (18 October 2026). It worked on my clean test build.
 
-**Try it.** Open the two Markdown files in [`lazyvim-testfiles`](https://github.com/james-s-pearson/Cybersecurity-Portfolio/tree/main/foundations/lazyvim-testfiles), `notes-a.md` and `notes-b.markdown`, and press F5 on each. The test files have no images, so also try F5 on a `.md` or `.markdown` file of your own that includes one. An image appears when its path is relative to the Markdown file, and the editor view shows only an icon. If an image doesn't appear, check the path first.
+**Try it.** Open the two Markdown files in [`lazyvim-testfiles`](https://github.com/james-s-pearson/Cybersecurity-Portfolio/tree/main/foundations/lazyvim-ide/lazyvim-testfiles), `notes-a.md` and `notes-b.markdown`, and press F5 on each. The test files have no images, so also try F5 on a `.md` or `.markdown` file of your own that includes one. An image appears when its path is relative to the Markdown file, and the editor view shows only an icon. If an image doesn't appear, check the path first.
 
 ### Easier undo history with Undotree
 

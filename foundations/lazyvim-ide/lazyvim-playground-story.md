@@ -254,7 +254,7 @@ These are all optional. The how-to guide covers them in [Step 8](https://github.
 
 If you're a learner who wants the same one-key workflow, I wrote a step-by-step guide covering the install, every config file, test files for each language, and the troubleshooting tips I wish I'd had: **[Build Your Own LazyVim Coding Playground →](https://github.com/james-s-pearson/Cybersecurity-Portfolio/blob/main/foundations/lazyvim-ide/lazyvim-playground-howto.md)**
 
-The test files are public too: [a folder of safe, throwaway test files](https://github.com/james-s-pearson/Cybersecurity-Portfolio/tree/main/foundations/lazyvim-testfiles), one per language, so you can check your build without writing your own.
+The test files are public too: [a folder of safe, throwaway test files](https://github.com/james-s-pearson/Cybersecurity-Portfolio/tree/main/foundations/lazyvim-ide/lazyvim-testfiles), one per language, so you can check your build without writing your own.
 
 If you build it, or improve it, I'd love to hear about it.
 
