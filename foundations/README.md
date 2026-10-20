@@ -20,7 +20,7 @@ The write-ups are here: a
 [how-to guide](lazyvim-ide/lazyvim-playground-howto.md) for building the same
 setup, and [the story](lazyvim-ide/lazyvim-playground-story.md) of how it came
 together. The safe test files I used to check each language are here too:
-[lazyvim-testfiles](lazyvim-testfiles/).
+[lazyvim-testfiles](lazyvim-ide/lazyvim-testfiles/).
 
 ## 2. The Python exercises
 

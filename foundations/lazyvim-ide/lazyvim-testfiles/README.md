@@ -1,7 +1,7 @@
 # LazyVim Test Files
 
 Small, safe files for checking that the one-key runner (F5) in the LazyVim
-coding environment described in [Foundations](../README.md) works for each
+coding environment described in [Foundations](../../README.md) works for each
 language. They are throwaway tests, not examples of my coding. An AI assistant
 helped draft them, as it did the setup they test.
 
