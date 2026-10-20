@@ -674,7 +674,7 @@ The cost: previews stay open until you close their tabs or press `Space c p`, so
 - The browser preview shows `> [!NOTE]` and `> [!WARNING]` callouts as plain quotes. The editor view shows them as "Note" and "Warning" boxes. I'm accepting that for now, and I expect to replace this plugin with a more actively maintained one later (something like `live-server`, which the HTML runner already uses).
 - The last commit to `markdown-preview.nvim` was in October 2023, as I write this (18 October 2026). It worked on my clean test build.
 
-**Try it.** Open the two Markdown files in [`lazyvim-testfiles`](https://github.com/james-s-pearson/Cybersecurity-Portfolio/tree/main/foundations/lazyvim-ide/lazyvim-testfiles), `notes-a.md` and `notes-b.markdown`, and press F5 on each. The test files have no images, so also try F5 on a `.md` or `.markdown` file of your own that includes one. An image appears when its path is relative to the Markdown file, and the editor view shows only an icon. If an image doesn't appear, check the path first.
+**Try it.** Open the Markdown files in [`lazyvim-testfiles`](https://github.com/james-s-pearson/Cybersecurity-Portfolio/tree/main/foundations/lazyvim-ide/lazyvim-testfiles), `hello.md`, `notes-a.md` and `notes-b.markdown`, and press F5 on each. The test files have no images, so also try F5 on a `.md` or `.markdown` file of your own that includes one. An image appears when its path is relative to the Markdown file, and the editor view shows only an icon. If an image doesn't appear, check the path first.
 
 ### Easier undo history with Undotree
 
