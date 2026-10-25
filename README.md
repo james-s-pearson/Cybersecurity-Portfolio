@@ -44,8 +44,11 @@ I build hands-on security skills on TryHackMe. Figures as of 15 October 2026.
 - Rooms completed: 121
 - Badges earned: 24
 - Activity: 1,830 events in the last year
-- Learning paths completed: Cyber Security 101 (August 2026) and Pre Security
-  (December 2025)
+- Learning paths completed (certificates of completion):
+  - [Cyber Security 101 (THM-N520VATOUS)](https://tryhackme-certificates.s3-eu-west-1.amazonaws.com/THM-N520VATOUS.pdf),
+    14 August 2026, 45 h 23 min
+  - [Pre Security (THM-JG3XUUDTJM)](https://tryhackme-certificates.s3-eu-west-1.amazonaws.com/THM-JG3XUUDTJM.pdf),
+    3 December 2025, 7 h 38 min
 
 ## Projects
 
