@@ -54,7 +54,9 @@ commit history shows the work as it happens.
 
 - **[Foundations](foundations/)**: how I learned Python for security. My
   thirteen Python exercises, the write-ups of the coding environment I built
-  (a how-to guide and a story) and its safe test files are published.
+  (a how-to guide and a story) and its safe test files are published, along
+  with a guide to setting up a clean Kali VM for investigating real-world
+  software bugs.
 
 Project Manager in a Box is the next project.
 
