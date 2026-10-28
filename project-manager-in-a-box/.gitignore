@@ -1,0 +1,10 @@
+# macOS and Office junk
+.DS_Store
+~$*
+
+# Python
+__pycache__/
+*.pyc
+
+# Private working folder (never publish)
+_handoff/

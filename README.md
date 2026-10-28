@@ -60,18 +60,19 @@ commit history shows the work as it happens.
   (a how-to guide and a story) and its safe test files are published, along
   with a guide to setting up a clean Kali VM for investigating real-world
   software bugs.
+- **[Project Manager in a Box](project-manager-in-a-box/)**: a project
+  management playbook with 22 templates, a workbook and a Claude skill, for
+  hybrid and technical (IT and security) projects. I designed and directed it,
+  an AI assistant generated it, and I review and edit it. Version 0.1, under
+  its own licence (see [Licence](#licence)).
 
-Project Manager in a Box is the next project.
+The security project case study is the next project.
 
 ## Roadmap
 
 Planned work, in order. Each item moves into the Projects section when I start
 it.
 
-0. **Project Manager in a Box:** a project management playbook with 22
-   templates and a workbook, for hybrid and technical (IT and security)
-   projects. I designed and directed it, an AI assistant generated it, and I
-   review and edit it.
 1. **Security project case study:** a fictional multi-factor authentication
    rollout run as a project (charter, RAID log, status report, lessons
    learned), plus a customer success plan from the vendor's side.
@@ -145,4 +146,7 @@ Each project's README explains how to run it.
 
 ## Licence
 
-Released under the [MIT Licence](LICENSE).
+Released under the [MIT Licence](LICENSE), except the
+[`project-manager-in-a-box`](project-manager-in-a-box/) folder, which has its
+own licence (CC BY-NC-SA 4.0) in
+[`LICENSE.md`](project-manager-in-a-box/LICENSE.md) in that folder.
