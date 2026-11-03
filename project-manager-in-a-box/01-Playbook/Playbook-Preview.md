@@ -1,7 +1,7 @@
 # Project Manager in a Box
 *A step-by-step playbook for Hybrid and Technical projects*
 
-By James Pearson · Version 0.1 (prototype) · Released October 2026 · CC BY-NC-SA 4.0
+By James Pearson · Version 0.2 (prototype) · Released November 2026 · CC BY-NC-SA 4.0
 
 **Latest version and all files:** [https://github.com/james-s-pearson/Cybersecurity-Portfolio/tree/main/project-manager-in-a-box](https://github.com/james-s-pearson/Cybersecurity-Portfolio/tree/main/project-manager-in-a-box). Links in this preview open the template files in this folder on GitHub.
 
@@ -49,13 +49,16 @@ By James Pearson · Version 0.1 (prototype) · Released October 2026 · CC BY-NC
 - Appendix B. Agile quick reference
 - Appendix C. Glossary
 - Appendix D. Sources & further reading
-- Appendix E. License & credits
+- Appendix E. Recovery plays by cause
+- Appendix F. License & credits
 
 ## Tracks
 
 **Hybrid track.** For projects that mix plan-driven work (fixed milestones, budgets, procurement, compliance) with iterative work (sprints, backlogs, frequent feedback). It is typical of business, operations, marketing and nonprofit programs, and of any project where some workstreams are predictable and others are not.
 
 **Technical track (IT + Security).** For software, infrastructure, cloud, data and cybersecurity projects. It adds the gates technical work needs: architecture and security review, environments, test strategy, change advisory board (CAB) approval, cut-over and rollback, compliance evidence and handover to operations.
+
+The two tracks combine. The Technical track says which gates and checks apply; the Hybrid track says how iterative work runs inside a plan. A software project that works in sprints applies both. Every callout labelled ‘Hybrid’ in the steps applies to any project that runs sprints, whatever its track.
 
 ## Tailoring
 
@@ -168,8 +171,9 @@ Initiating turns an idea or request into an authorized project. The goal is not 
 | Output | Where it is kept | Responsible |
 |---|---|---|
 | Stakeholder Register with power/interest grid | Workbook: Stakeholders tab | PM |
+| Environment Log started (insights about the wider environment around the project) | Workbook: Environment tab | PM |
 
-**Templates:** [T03 Stakeholder Register & Power/Interest Grid](../02-Templates/T03-Stakeholder-Register-Power-Interest-Grid.xlsx)
+**Templates:** [T03 Stakeholder Register & Power/Interest Grid](../02-Templates/T03-Stakeholder-Register-Power-Interest-Grid.xlsx), [T28 Environment Log](../02-Templates/T28-Environment-Log.xlsx)
 
 **How to do it**
 
@@ -177,12 +181,13 @@ Initiating turns an idea or request into an authorized project. The goal is not 
 2. Interview key stakeholders: priorities, concerns, preferred role, preferred communication.
 3. Score Power and Interest 1–5 and place each person on the grid.
 4. Plan an engagement action for anyone whose current support is below the level you need.
+5. Start the Environment Log (T28) and note what is happening in the environment around the project that you should be aware of, such as a reorganization, a funding cycle, a regulatory date, or an initiative being taken up by other project teams that may influence or inspire this project. Project value does not exist in a vacuum. This log is for insights, not risks.
 
 > **Hybrid:** Identify the Product Owner early. In hybrid work that person makes the day-to-day priority calls.
 >
 > **Technical (IT + Security):** Include the Security, Privacy, Infrastructure and Operations owners, the Change Advisory Board (CAB), and any auditor or compliance contact.
 
-**Done when:** Register complete; Every high-power stakeholder has an engagement action; Product Owner identified
+**Done when:** Register complete; Every high-power stakeholder has an engagement action; Product Owner identified; Environment Log started
 
 ### 1.4 Choose the delivery approach and tailor the playbook
 
@@ -299,7 +304,7 @@ Planning turns the charter into an integrated plan: what will be delivered (scop
 
 ### 2.1 Elicit and analyze requirements
 
-**What it is.** Find out from stakeholders what the solution must do (functional requirements) and how well it must do it (non-functional requirements). Record them in a register or backlog.
+**What it is.** Find out from stakeholders what the solution must do (functional requirements) and how well it must do it (non-functional requirements). Record them in the Requirements Register. Requirements say what is needed; the work that builds them is tracked separately, as backlog items.
 
 **Why it matters.** Requirements are the bridge between the business goal and the deliverables. Most rework comes from requirements that were missing, vague or never agreed.
 
@@ -315,22 +320,24 @@ Planning turns the charter into an integrated plan: what will be delivered (scop
 
 | Output | Where it is kept | Responsible |
 |---|---|---|
-| Requirements Register or Product Backlog | Workbook: Requirements tab (or the team’s backlog tool) | BA / Product Owner |
+| Requirements Register | Workbook: Requirements tab | BA / Product Owner |
+| Product Backlog (if the project runs sprints) | Workbook: Backlog tab (or the team’s backlog tool) | Product Owner |
 
-**Templates:** [T06 Requirements Register / Product Backlog](../02-Templates/T06-Requirements-Register-Product-Backlog.xlsx)
+**Templates:** [T06 Requirements Register](../02-Templates/T06-Requirements-Register.xlsx), [T25 Backlog](../02-Templates/T25-Backlog.xlsx)
 
 **How to do it**
 
 1. Choose methods: interviews, workshops, observation, surveys, document review, prototyping.
-2. Write each requirement as a user story or ‘shall’ statement with acceptance criteria.
+2. Write each requirement as a user story (‘As a [type of user], I need [capability] so that [benefit]’) or a clear ‘shall’ statement, with acceptance criteria. The story describes the value the requirement promises.
 3. Prioritize with MoSCoW together with the sponsor and the PO.
 4. Trace each requirement to a goal, so anything that doesn’t serve a goal is challenged.
+5. Have a named person approve each requirement before it is built, and record who approved it. Later, record who accepted it as delivered.
 
-> **Hybrid:** Fully specify the Musts for the first release. Keep later items as epics and refine them before each sprint (backlog refinement).
+> **Hybrid:** Fully specify the Musts for the first release. Break each requirement down into backlog items (T25), the work that delivers it, link each item to its requirement, and keep later items as epics to refine before each sprint (backlog refinement).
 >
 > **Technical (IT + Security):** Capture non-functional requirements explicitly: security, privacy, accessibility (WCAG 2.2 AA), performance, availability, logging, data retention and integration interfaces.
 
-**Done when:** Musts have acceptance criteria; Priorities agreed with the PO and sponsor; NFRs captured
+**Done when:** Musts have acceptance criteria; Priorities agreed with the PO and sponsor; NFRs captured; Every Must has a named approver
 
 ### 2.2 Define scope and build the work breakdown structure (WBS)
 
@@ -351,17 +358,19 @@ Planning turns the charter into an integrated plan: what will be delivered (scop
 |---|---|---|
 | Scope Statement (scope baseline) | Repository: 02-Planning | PM (author), Sponsor (approver) |
 | WBS | Workbook: Schedule tab (WBS IDs) | PM with the team |
+| WBS Dictionary | Workbook: WBS Dictionary tab | PM with the team |
 
-**Templates:** [T07 Scope Statement](../02-Templates/T07-Scope-Statement.docx), [T08 WBS & Schedule (Gantt)](../02-Templates/T08-WBS-Schedule-Gantt.xlsx)
+**Templates:** [T07 Scope Statement](../02-Templates/T07-Scope-Statement.docx), [T08 WBS & Schedule (Gantt)](../02-Templates/T08-WBS-Schedule-Gantt.xlsx), [T29 WBS Dictionary](../02-Templates/T29-WBS-Dictionary.xlsx)
 
 **How to do it**
 
 1. Write the scope statement: deliverables, acceptance criteria, exclusions, constraints, assumptions.
 2. Run a WBS workshop with the people who will do the work. Decompose deliverables, not activities.
 3. Stop decomposing when a work package can be estimated and owned by one person (about 1–10 days).
-4. Number the items (1.0, 1.1, 1.1.1) and keep a WBS dictionary for anything unclear.
+4. Number the items (1.0, 1.1, 1.1.1). Describe each work package in the WBS Dictionary (T29): what it delivers, its acceptance criteria and who accepts it.
+5. Give each requirement in the Requirements Register (T06) the WBS ID of the work that delivers it.
 
-> **Hybrid:** For agile workstreams, the WBS stops at epic or release level, and the backlog holds the detail.
+> **Hybrid:** For agile workstreams, the WBS stops at epic or release level, and the backlog holds the detail. Requirements built in sprints point to that branch, not to one sprint.
 >
 > **Technical (IT + Security):** Include the work people often forget: environments, CI/CD pipeline, data migration, security testing, documentation, runbooks, training, cut-over and hypercare.
 
@@ -386,17 +395,19 @@ Planning turns the charter into an integrated plan: what will be delivered (scop
 | Output | Where it is kept | Responsible |
 |---|---|---|
 | Project Schedule with milestones (schedule baseline) | Workbook: Schedule tab | PM |
+| Activity List | Workbook: Activity List tab | PM, with the work package owners |
 
-**Templates:** [T08 WBS & Schedule (Gantt)](../02-Templates/T08-WBS-Schedule-Gantt.xlsx)
+**Templates:** [T08 WBS & Schedule (Gantt)](../02-Templates/T08-WBS-Schedule-Gantt.xlsx), [T30 Activity List](../02-Templates/T30-Activity-List.xlsx)
 
 **How to do it**
 
-1. Ask the people doing the work for estimates. Break large tasks down and question their assumptions.
-2. Use three-point estimates for uncertain work: (Optimistic + 4×Most likely + Pessimistic) ÷ 6 (the PERT method).
-3. Enter the dependencies, then identify the critical path (the longest chain of dependent tasks).
-4. Calculate float, also called slack: the number of days a task can slip without delaying the next task (free float) or the project finish (total float). Tasks on the critical path have no total float, so any slip moves the end date; track them most closely and mention them by name in status updates. Tasks off the path have float you can use when balancing resources. Recheck after every schedule change, because the critical path can move.
-5. Add milestones where success can be tested, budget is committed or stakeholders need an update.
-6. Add schedule contingency for the top risks and copy the approved dates into the Baseline columns.
+1. List the activities for each work package in the Activity List (T30): what has to be done, by whom and by when. Keep the Schedule at work-package level.
+2. Ask the people doing the work for estimates. Break large tasks down and question their assumptions.
+3. Use three-point estimates for uncertain work: (Optimistic + 4×Most likely + Pessimistic) ÷ 6 (the PERT method).
+4. Enter the dependencies, then identify the critical path (the longest chain of dependent tasks).
+5. Calculate float, also called slack: the number of days a task can slip without delaying the next task (free float) or the project finish (total float). Tasks on the critical path have no total float, so any slip moves the end date; track them most closely and mention them by name in status updates. Tasks off the path have float you can use when balancing resources. Recheck after every schedule change, because the critical path can move.
+6. Add milestones where success can be tested, budget is committed or stakeholders need an update.
+7. Add schedule contingency for the top risks and copy the approved dates into the Baseline columns.
 
 > **Hybrid:** Show sprints as recurring blocks on the Gantt and tie each milestone to a sprint review. Report sprint velocity next to milestone status.
 >
@@ -575,21 +586,24 @@ Planning turns the charter into an integrated plan: what will be delivered (scop
 | Output | Where it is kept | Responsible |
 |---|---|---|
 | Quality & Acceptance Plan (incl. Definition of Done and test strategy) | Repository: 02-Planning | PM / Tech Lead |
+| Definition of Done logged as a decision | Workbook: Decisions tab | PM |
+| Acceptance Log set up | Workbook: Acceptance tab | PM / PO |
 
-**Templates:** [T13 Quality & Acceptance Plan](../02-Templates/T13-Quality-Acceptance-Plan.docx)
+**Templates:** [T13 Quality & Acceptance Plan](../02-Templates/T13-Quality-Acceptance-Plan.docx), [T17 Decision Log](../02-Templates/T17-Decision-Log.xlsx), [T23 Acceptance Log](../02-Templates/T23-Acceptance-Log.xlsx)
 
 **How to do it**
 
 1. List the standards that apply.
 2. For each deliverable, define how its quality will be checked and who accepts it.
-3. Write the Definition of Done with the team.
-4. Schedule the quality activities in the plan (reviews, tests, audits).
+3. Write the Definition of Done with the team. Record it as a decision in the Decision Log (T17) with a version and date, and log every later change the same way, so the team can see how the standard moved.
+4. Set up the Acceptance Log (T23): list each deliverable that will need acceptance, who accepts it and what evidence they will expect.
+5. Schedule the quality activities in the plan (reviews, tests, audits).
 
 > **Hybrid:** Use a Definition of Done for sprint work and formal acceptance criteria for milestone deliverables.
 >
 > **Technical (IT + Security):** Write a test strategy covering unit, integration, system, UAT, performance, accessibility and security testing (SAST/DAST, vulnerability scans, penetration test), plus the entry and exit criteria for each.
 
-**Done when:** Acceptance criteria for every deliverable; Definition of Done agreed; Test strategy approved (Technical track)
+**Done when:** Acceptance criteria for every deliverable; Definition of Done agreed and logged as a decision; Acceptance Log set up; Test strategy approved (Technical track)
 
 ### 2.9 Plan sourcing and procurement
 
@@ -713,7 +727,7 @@ Executing is where most of the time and money goes. The PM’s job shifts from p
 
 | Input | Where to get it | Responsible |
 |---|---|---|
-| Schedule / backlog | Workbook: Schedule; backlog tool | PM / PO |
+| Schedule and backlog | Workbook: Schedule and Backlog tabs; backlog tool | PM / PO |
 | Approved plan and RACI | 02-Planning | PM |
 
 **Outputs**
@@ -721,18 +735,19 @@ Executing is where most of the time and money goes. The PM’s job shifts from p
 | Output | Where it is kept | Responsible |
 |---|---|---|
 | Deliverables (work products) | Repository: 03-Executing or the team’s tools | Delivery team |
-| Updated schedule (% complete, status) | Workbook: Schedule | Task owners (update), PM (check) |
+| Updated Activity List and Schedule (% complete, status) | Workbook: Activity List and Schedule tabs | PM (update), task owners (input) |
+| Sprint Backlog and Sprint Log (if the project runs sprints) | Workbook: Sprint Backlog and Sprint Log tabs | Delivery team (plan), PM (check) |
 
-**Templates:** [T08 WBS & Schedule (Gantt)](../02-Templates/T08-WBS-Schedule-Gantt.xlsx), [T18 Meeting Agenda & Minutes](../02-Templates/T18-Meeting-Agenda-Minutes.docx)
+**Templates:** [T08 WBS & Schedule (Gantt)](../02-Templates/T08-WBS-Schedule-Gantt.xlsx), [T30 Activity List](../02-Templates/T30-Activity-List.xlsx), [T18 Meeting Agenda & Minutes](../02-Templates/T18-Meeting-Agenda-Minutes.docx), [T25 Backlog](../02-Templates/T25-Backlog.xlsx), [T26 Sprint Backlog](../02-Templates/T26-Sprint-Backlog.xlsx), [T27 Sprint Log](../02-Templates/T27-Sprint-Log.xlsx)
 
 **How to do it**
 
 1. Hold a short daily or twice-weekly check-in: progress, plan for the day, blockers.
-2. Ask task owners to update the % complete and status in the workbook every week.
+2. Each week, review progress with the task owners, then update the % complete and status in the workbook: in the Activity List for work packages that have activities, and in the Schedule for the rest.
 3. Clear blockers within 24–48 hours or escalate them.
 4. Protect the team from unplanned work. Send new requests through change control.
 
-> **Hybrid:** Sprint planning pulls from the prioritized backlog. Before each sprint, agree a one-sentence sprint goal; plan to 60 to 80% of the team’s available hours, after subtracting meetings and leave; pick backlog items in priority order that fit, each with an owner and any dependency named; confirm the Definition of Done everyone will use (for example reviewed, tested, documented and accepted by the product owner); name the top risks for the sprint and who watches them; and book the sprint review and retrospective. The PM keeps the milestone view current and manages dependencies between agile and plan-driven workstreams. Appendix B has the details.
+> **Hybrid:** Sprint planning pulls from the prioritized backlog. Before each sprint, agree a one-sentence sprint goal; plan to 60 to 80% of the team’s available hours, after subtracting meetings and leave; pick backlog items (T25) in priority order that fit and copy them into the Sprint Backlog (T26), which is cleared and rebuilt from empty at every planning session, each with an owner and any dependency named; confirm the Definition of Done everyone will use, in its current logged version (for example reviewed, tested, documented and accepted by the product owner); name the top risks for the sprint and who watches them; and book the sprint review and retrospective. After the review, record the result in the Sprint Log (T27): work planned and completed (items that met the Definition of Done), velocity, carry-over items and the retrospective headline. Record the Product Owner’s accept or reject decisions in the Acceptance Log (T23), and return unfinished or rejected items to the Backlog. The PM keeps the milestone view current and manages dependencies between agile and plan-driven workstreams. Appendix B has the details.
 >
 > **Technical (IT + Security):** Use pull requests with peer review, automated builds and tests, and track technical debt explicitly as backlog items.
 
@@ -912,7 +927,7 @@ Executing is where most of the time and money goes. The PM’s job shifts from p
 ## Chapter 4. Monitoring & Controlling
 *Measure progress against the plan, control change, and keep the project on track.*
 
-Monitoring & Controlling runs alongside Executing from the first day of execution until closing. It compares actual performance with the baselines, forecasts where the project is heading, controls changes and makes sure deliverables are accepted. The Project Workbook dashboard is designed to support this chapter: update the tabs every week and the insights and status numbers update automatically.
+Monitoring & Controlling runs alongside Executing from the first day of execution until closing. It compares actual performance with the baselines, forecasts where the project is heading, controls changes and makes sure deliverables are accepted. The Project Workbook dashboard is designed to support this chapter: update the tabs every week and the insights and status numbers update automatically. If the project drifts off track, Appendix E suggests a first response for the most common causes.
 
 **Exit gate:** Ongoing. Phase or release gates use the same data. The project moves to Closing when all deliverables are accepted.
 
@@ -960,26 +975,27 @@ Monitoring & Controlling runs alongside Executing from the first day of executio
 
 | Input | Where to get it | Responsible |
 |---|---|---|
-| Change request | Any stakeholder | Requester |
+| Change request (on the Change Request Form, where the project uses one) | Any stakeholder | Requester |
 | Baselines and the PM’s authority limits | Workbook; charter | PM |
 
 **Outputs**
 
 | Output | Where it is kept | Responsible |
 |---|---|---|
+| Completed Change Request Form (where used) | 04-Monitoring/Changes | Requester (raises), PM (impact analysis) |
 | Change Log with decisions | Workbook: Changes | PM |
 | Updated baselines and plans (if approved) | Workbook; 02-Planning | PM |
 
-**Templates:** [T16 Change Request & Change Log](../02-Templates/T16-Change-Request-Change-Log.xlsx), [T17 Decision Log](../02-Templates/T17-Decision-Log.xlsx)
+**Templates:** [T24 Change Request Form](../02-Templates/T24-Change-Request-Form.docx), [T16 Change Request & Change Log](../02-Templates/T16-Change-Request-Change-Log.xlsx), [T17 Decision Log](../02-Templates/T17-Decision-Log.xlsx)
 
 **How to do it**
 
-1. Log the request and analyze its impact on scope, schedule, cost, risk, quality and resources.
-2. Recommend approve, reject or defer, and send it to the right approver (PM, sponsor or CCB).
-3. Record the decision. If approved, update the baselines and the affected plans.
+1. On predictive projects, and on hybrid work that has a change review board or other approval process, raise the request on the Change Request Form (T24) and analyze its impact on scope, schedule, cost, risk, quality and resources.
+2. Recommend approve, reject or defer, and submit the form to the approver or change board named in the charter. Name who it is being submitted to before you send it.
+3. Record the decision on the form. Whether or not a form is used, log every change in the Change Log (T16). If approved, update the baselines and the affected plans.
 4. Tell the affected stakeholders and the team.
 
-> **Hybrid:** Re-prioritizing items within the backlog (swapping items of similar size) is normal agile practice and does not need a change request. Changes to milestones, budget or the overall scope do.
+> **Hybrid:** Most agile teams do not use a change request form. The Product Owner handles changes through the product backlog, and re-prioritizing items (swapping items of similar size) is normal practice. Use the form only for hybrid work that has a change review board or other approval process, and for changes to milestones, budget or the overall scope. Log every change either way.
 >
 > **Technical (IT + Security):** Changes to production also need CAB approval, which is separate from the project’s change control. Include the rollback plan and the risk rating in the CAB request.
 
@@ -995,28 +1011,29 @@ Monitoring & Controlling runs alongside Executing from the first day of executio
 
 | Input | Where to get it | Responsible |
 |---|---|---|
-| RAID log, stakeholder register | Workbook | PM |
+| RAID log, stakeholder register, Environment Log | Workbook | PM |
 
 **Outputs**
 
 | Output | Where it is kept | Responsible |
 |---|---|---|
-| Updated RAID log and stakeholder register | Workbook | PM / item owners |
+| Updated RAID log, stakeholder register and Environment Log | Workbook | PM / item owners |
 
-**Templates:** [T11 RAID Log (Risks, Assumptions, Issues, Dependencies)](../02-Templates/T11-RAID-Log-Risks-Assumptions-Issues-Dependencies.xlsx), [T03 Stakeholder Register & Power/Interest Grid](../02-Templates/T03-Stakeholder-Register-Power-Interest-Grid.xlsx)
+**Templates:** [T11 RAID Log (Risks, Assumptions, Issues, Dependencies)](../02-Templates/T11-RAID-Log-Risks-Assumptions-Issues-Dependencies.xlsx), [T03 Stakeholder Register & Power/Interest Grid](../02-Templates/T03-Stakeholder-Register-Power-Interest-Grid.xlsx), [T28 Environment Log](../02-Templates/T28-Environment-Log.xlsx)
 
 **How to do it**
 
 1. Review the risks every week (Red and Amber) and the full list every month.
 2. Ask at every status meeting: ‘What new risks do we see?’
-3. Check whether each response is reducing the score; if not, change the response.
-4. Re-score stakeholder engagement each month and adjust the actions.
+3. Review the Environment Log (T28) every two weeks. Look up from the project, add new insights about the environment around it and close entries that no longer matter. Risks do not belong in this log.
+4. Check whether each response is reducing the score; if not, change the response.
+5. Re-score stakeholder engagement each month and adjust the actions.
 
 > **Hybrid:** Use the sprint retrospective and sprint review to spot new risks and stakeholder concerns.
 >
 > **Technical (IT + Security):** Track vulnerability findings, audit observations and vendor security issues through to closure.
 
-**Done when:** RAID log reviewed every week; Stakeholder engagement re-scored every month
+**Done when:** RAID log reviewed every week; Environment Log reviewed every two weeks; Stakeholder engagement re-scored every month
 
 ### 4.4 Validate scope and accept deliverables
 
@@ -1036,21 +1053,22 @@ Monitoring & Controlling runs alongside Executing from the first day of executio
 | Output | Where it is kept | Responsible |
 |---|---|---|
 | Accepted deliverables and sign-off records | 05-Closing/Acceptance | PM (records), Accepting stakeholder (signs) |
+| Acceptance Log, kept current | Workbook: Acceptance tab | PM (records), Accepting stakeholder (accepts) |
 
-**Templates:** [T21 Acceptance & Transition Sign-off](../02-Templates/T21-Acceptance-Transition-Sign-off.docx), [T06 Requirements Register / Product Backlog](../02-Templates/T06-Requirements-Register-Product-Backlog.xlsx)
+**Templates:** [T23 Acceptance Log](../02-Templates/T23-Acceptance-Log.xlsx), [T21 Acceptance & Transition Sign-off](../02-Templates/T21-Acceptance-Transition-Sign-off.docx), [T06 Requirements Register](../02-Templates/T06-Requirements-Register.xlsx)
 
 **How to do it**
 
 1. Show or test each deliverable against its acceptance criteria.
-2. Record acceptance in writing. Email is fine if the charter allows it.
+2. Record acceptance in writing and in the Acceptance Log (T23): the item or deliverable (with its WBS ID), the evidence, who accepted it and the date. Email is fine if the charter allows it.
 3. Log rejected items with the reasons and a plan to fix them.
-4. Update the requirements traceability to ‘Accepted’.
+4. Check the Requirements Register (T06). The register marks a requirement ‘Accepted’ by itself once its named acceptor has accepted everything that delivers it: all of its items, or its work package. If anyone else accepted any of it, the acceptor decides on the whole requirement first, and the PM records that decision in the Acceptance Log.
 
-> **Hybrid:** The PO accepts stories at the sprint review. The sponsor accepts milestone deliverables at gate reviews.
+> **Hybrid:** The PO accepts or rejects items at the sprint review, and each decision goes in the Acceptance Log (T23) with the sprint number. An accepted item leaves the Backlog; a rejected or unfinished item returns to it. The sponsor accepts milestone deliverables at gate reviews.
 >
 > **Technical (IT + Security):** Get UAT sign-off, security sign-off (penetration test findings fixed or formally accepted) and operational readiness sign-off.
 
-**Done when:** Every deliverable accepted or has a remediation plan
+**Done when:** Every deliverable accepted or has a remediation plan; Acceptance Log current
 
 ### 4.5 Report status and escalate
 
@@ -1080,8 +1098,9 @@ Monitoring & Controlling runs alongside Executing from the first day of executio
 2. Set the overall RAG: Green = on track; Amber = at risk, recoverable by the team; Red = needs sponsor action.
 3. Put decisions and help needed at the top.
 4. Escalate using the format: issue, impact, options, recommendation, decision needed by.
+5. If the project is off track, use Appendix E (Recovery plays by cause) to choose a first response before you escalate.
 
-> **Hybrid:** Show velocity and the release burn-up next to milestone RAG so stakeholders see both views.
+> **Hybrid:** Show velocity and the release burn-up (from the Sprint Log, T27) next to milestone RAG so stakeholders see both views.
 >
 > **Technical (IT + Security):** Add a short technical health section covering environments, the release pipeline, open critical vulnerabilities and incidents.
 
@@ -1105,7 +1124,7 @@ Closing makes sure all the work is finished and accepted, the solution is handed
 
 | Input | Where to get it | Responsible |
 |---|---|---|
-| Acceptance records | 05-Closing/Acceptance | PM |
+| Acceptance records and the Acceptance Log | 05-Closing/Acceptance; workbook | PM |
 | Operational requirements (support model, training, documentation) | Operations owner | Operations / Support Owner |
 
 **Outputs**
@@ -1118,7 +1137,7 @@ Closing makes sure all the work is finished and accepted, the solution is handed
 
 **How to do it**
 
-1. Check that all acceptance records are complete.
+1. Check that all acceptance records are complete, using the Acceptance Log (T23).
 2. Hand over the documentation, training, access, support contacts and open defects.
 3. Agree a hypercare period and its exit criteria (e.g., two weeks with no Severity 1 incidents).
 4. Get the transition signed.
@@ -1331,17 +1350,19 @@ Used in steps: 1.6, 3.1
 
 [Open the template file](../02-Templates/T05-Kickoff-Meeting-Kit.docx)
 
-### T06 Requirements Register / Product Backlog (.xlsx)
-Captures requirements or user stories with priority, acceptance criteria and traceability.
+### T06 Requirements Register (.xlsx)
+Captures what the solution must do and how well, as requirements with priority, acceptance criteria, an approver and an acceptor, and links to the work that delivers them.
 
-1. Write each item as ‘As a <user>, I need <capability> so that <benefit>’ or as a ‘shall’ statement.
+1. Write each requirement as a user story (‘As a [type of user], I need [capability] so that [benefit]’) or as a ‘shall’ statement. The story states the value the requirement promises. The work that builds it is tracked separately, as backlog items in the Backlog (T25).
 2. Prioritize with MoSCoW (Must, Should, Could, Won’t this time).
-3. Every Must needs testable acceptance criteria before it is built.
-4. Link each item to a WBS ID or epic and to its test case for traceability.
+3. Every Must needs testable acceptance criteria and a named approver before it is built.
+4. Name one approver and one acceptor for each requirement. The approver approves it before it is built. The acceptor is accountable for accepting it as delivered, and is often the same person.
+5. The register works out a delivery status for you from the other logs. For a requirement built in sprints: Not started, In backlog, In Sprint N (when a linked item is in the current sprint), the count of linked items accepted (for example 2 of 3), Ready for acceptance, and Accepted. For a requirement delivered by plan-driven work, with no backlog items, the status comes from the Schedule line for its WBS ID: Not started (0% complete), In progress (with the percentage) and Ready for acceptance (100%). Either way, if the requirement’s acceptor accepted everything that delivers it (all of its items, or its work package), the requirement becomes Accepted by itself. If other people accepted some of it, the status stays Ready for acceptance until the acceptor decides on the whole requirement and the PM records that decision as a Requirement-level row in the Acceptance Log (T23), so that one named person accepts the whole requirement. Accepted by and the date are then taken from that row.
+6. Give each requirement the WBS ID of the work that delivers it: a work package for plan-driven work, or the branch that holds the sprint work for work built in sprints (not one sprint’s line, because items can move between sprints). Link it to its test case. Each backlog item in the Backlog (T25) names the requirement it delivers.
 
 Used in steps: 2.1, 4.4
 
-[Open the template file](../02-Templates/T06-Requirements-Register-Product-Backlog.xlsx)
+[Open the template file](../02-Templates/T06-Requirements-Register.xlsx)
 
 ### T07 Scope Statement (.docx)
 Defines the deliverables, acceptance criteria, exclusions, constraints and assumptions in detail.
@@ -1363,6 +1384,9 @@ Breaks the scope into work packages and schedules them with owners, dates, depen
 3. Use the Predecessor column to record dependencies and to find the critical path.
 4. Mark milestones with a duration of 0.
 5. Once the plan is approved, copy the dates into the Baseline columns and leave them unchanged.
+6. Put work built in sprints under one branch, with a line for each sprint as a time box. The detail lives in the Backlog (T25).
+7. Describe each work package in the WBS Dictionary (T29). When a work package is accepted or rejected, the decision goes in the Acceptance Log (T23) with its WBS ID, and the Acceptance column shows the result.
+8. List the activities inside each work package in the Activity List (T30), not in the Schedule. The Schedule then calculates the work package’s % complete from them, and the Flag column shows “Check %” if a typed % or status disagrees.
 
 Used in steps: 2.2, 2.3, 3.2, 4.1
 
@@ -1421,7 +1445,7 @@ States quality standards, review and test activities, and how each deliverable w
 
 1. List the standards that apply (internal policies, industry or regulatory standards).
 2. For each deliverable, define the quality check (peer review, test, audit) and who approves it.
-3. Define the Definition of Done for agile work and the acceptance criteria for milestone deliverables.
+3. Define the Definition of Done for agile work, give it a version and date, and log it and every later change in the Decision Log (T17). Define the acceptance criteria for milestone deliverables.
 4. Technical track: attach the test strategy (unit, integration, UAT, performance, security).
 
 Used in steps: 2.8, 3.3
@@ -1455,10 +1479,11 @@ Used in steps: 2.10, 3.4, 4.5
 ### T16 Change Request & Change Log (.xlsx)
 Documents proposed changes to scope, schedule or budget, their impact and the approval decision.
 
-1. Anyone can raise a change. The PM logs it and runs an impact analysis (scope, time, cost, risk, quality).
-2. Bring it to the approver named in the charter or the CCB with a recommendation.
-3. If approved, update the baselines and tell the affected stakeholders.
-4. Rejected changes stay in the log. They show the decision was considered.
+1. Anyone can raise a change. Log every change here, whether or not a Change Request Form (T24) is used. The Change Request Form is for predictive projects and for hybrid work with a change review board or other approval process. Most agile projects do not use one, because the Product Owner handles changes through the product backlog.
+2. The PM runs the impact analysis (scope, schedule, cost, risk, quality, resources) and notes the requirements or WBS IDs the change affects.
+3. Bring it to the approver named in the charter or the CCB with a recommendation.
+4. If approved, update the baselines and tell the affected stakeholders.
+5. Rejected changes stay in the log. They show the decision was considered.
 
 Used in steps: 4.2
 
@@ -1469,9 +1494,10 @@ Records significant decisions, the options considered, who decided and why.
 
 1. Log any decision that would be expensive to reverse or that someone may question later.
 2. Record the options considered and the reasoning, not just the outcome.
-3. Link related change requests or RAID items.
+3. Log the Definition of Done when it is agreed and again whenever it changes (version, date, what changed and why), so the team can see how the standard moved.
+4. Link related change requests or RAID items.
 
-Used in steps: 1.1, 1.6, 2.9, 2.10, 3.5, 3.7, 4.2, 4.5
+Used in steps: 1.1, 1.6, 2.8, 2.9, 2.10, 3.5, 3.7, 4.2, 4.5
 
 [Open the template file](../02-Templates/T17-Decision-Log.xlsx)
 
@@ -1513,7 +1539,7 @@ Used in steps: 5.4, 5.5
 ### T21 Acceptance & Transition Sign-off (.docx)
 Records formal acceptance of deliverables and the handover to operations or the business owner.
 
-1. List every deliverable with its acceptance evidence (test results, demo, inspection).
+1. List every deliverable with its acceptance evidence (test results, demo, inspection). Copy them from the Acceptance Log (T23).
 2. Confirm the operations owner has the training, documentation, access and support model they need.
 3. Agree a warranty or hypercare period and its exit criteria.
 4. Have the sponsor and the receiving owner sign it.
@@ -1534,18 +1560,126 @@ Used in steps: 5.1
 
 [Open the template file](../02-Templates/T22-Go-Live-Readiness-Security-Checklist.xlsx)
 
+### T23 Acceptance Log (.xlsx)
+Records every acceptance decision during the project, for backlog items, work packages and other deliverables: the evidence, who accepted or approved it, when, and the decision. Plan-driven and sprint work are accepted in the same log.
+
+1. Add one row per acceptance decision. The PM keeps the log and records each decision. Choose the level: Item (a backlog item shown at a sprint review), Deliverable (a work package, milestone or release item in the WBS, accepted by the acceptor named in the WBS Dictionary, T29) or Requirement (the final decision by a requirement’s named acceptor, needed only when someone else accepted its items or its work package).
+2. For an item, record its ID and title, the one requirement it satisfies and the sprint number (an item that serves two requirements gets one row for each). For a deliverable, record its name and its WBS ID (one per row). For a requirement, record its ID.
+3. Record the date and the evidence (test result, demo, inspection, document review).
+4. Record the decision (Accepted or Rejected), who accepted or approved it and the date. An item with unmet conditions is not accepted: record it as Rejected, with the work still needed. A rejected item returns to the Backlog. A rejected work package stays in the Schedule until it is fixed and accepted. The next decision on either is a new row.
+5. At the end of the project, use the log to complete the Acceptance & Transition Sign-off (T21).
+
+Used in steps: 2.8, 4.4
+
+[Open the template file](../02-Templates/T23-Acceptance-Log.xlsx)
+
+### T24 Change Request Form (.docx)
+A one-page form for proposing a change, analyzing its impact, recommending a decision and recording the approval. For predictive projects and for hybrid work with a change review board or other approval process.
+
+1. Anyone can raise a change. Describe the change, why it is needed and what happens if it is not made.
+2. The PM completes the impact analysis for scope, schedule, cost, risk, quality and resources.
+3. Recommend approve, reject or defer, and submit the form to the approver or change board named in the charter. The form must say who it is submitted to.
+4. Record the decision and the date. If approved, update the baselines, tell the affected stakeholders and add a row to the Change Log (T16).
+5. Technical track: if production is affected, attach the rollback plan and the risk rating for the CAB, which approves separately.
+
+Used in steps: 4.2
+
+[Open the template file](../02-Templates/T24-Change-Request-Form.docx) · [See the filled-in example](../05-Examples/T24-Change-Request-Form-EXAMPLE-Project-Beacon.docx)
+
+### T25 Backlog (.xlsx)
+Lists the open work to be built in sprints, ranked and sized, with each item linked to the requirement it delivers. It changes constantly: items leave for a sprint, return, and are re-ranked.
+
+1. Break each requirement (T06) down into the work that delivers it: a feature, task, fix, spike (a short, time-boxed investigation) or technical debt item. Link every item to its requirement. An item such as a bug fix may have no new requirement. The requirement says what is promised; the item says how it will be built.
+2. Rank the items. The Product Owner owns the order and can re-rank at any time. The top of the list is detailed and ready; the bottom can stay rough.
+3. Give each item a size in the team’s own unit.
+4. At sprint planning, pull the items for the next sprint into the Sprint Backlog (T26). Items that are not finished, or that are rejected at the sprint review, return here and are ranked again.
+5. An accepted item leaves the Backlog. Its record is the Acceptance Log (T23).
+
+Used in steps: 2.1, 3.2
+
+[Open the template file](../02-Templates/T25-Backlog.xlsx)
+
+### T26 Sprint Backlog (.xlsx)
+Lists the backlog items the team commits to in the current sprint, with owners and progress. It is rebuilt from an empty sheet at every sprint planning session and holds nothing needed later.
+
+1. At sprint planning, clear the sheet. Write the sprint number and the one-sentence sprint goal.
+2. Pull items from the Backlog (T25) in rank order until the sprint is full, planning to 60 to 80% of the team’s available time.
+3. Give each item an owner and note any dependency.
+4. Update the status as the sprint runs. Mark an item done only when it meets the Definition of Done.
+5. At the sprint review, copy the totals into the Sprint Log (T27), record the Product Owner’s decisions in the Acceptance Log (T23) and return unfinished or rejected items to the Backlog. Then the sheet is ready to clear for the next sprint.
+
+Used in steps: 3.2
+
+[Open the template file](../02-Templates/T26-Sprint-Backlog.xlsx)
+
+### T27 Sprint Log (.xlsx)
+Records the plan and result of each sprint, including sprints that deliver nothing: work planned and completed, velocity, carry-over items and the retrospective headline.
+
+1. Add one row per sprint at sprint planning: the sprint’s line in the Schedule (its WBS ID, from which the dates are looked up), the goal and the work planned, in the team’s unit.
+2. At the sprint review, copy in the work completed from the Sprint Backlog totals. Count only items that meet the Definition of Done. Acceptance is a separate decision, recorded in the Acceptance Log (T23). A sprint that completes nothing still gets a row.
+3. Velocity and the running average are calculated, and the Dashboard draws the burn-up against total scope.
+4. List the carry-over items (their IDs), the top risk for the sprint, any decisions needed and the headline from the retrospective, with a link to the Lessons Learned Register (T19).
+5. Plan from the trend, not from one sprint: a falling velocity with stable scope is an early warning.
+
+Used in steps: 3.2
+
+[Open the template file](../02-Templates/T27-Sprint-Log.xlsx)
+
+### T28 Environment Log (.xlsx)
+Keeps the PM looking up from the project to the wider environment in which it is meant to deliver value. It records insights to be aware of. It is not a place to store risks.
+
+1. Every few weeks, step back from the project and look at the environment around it: the organization, the market, regulation, technology, and other teams’ work.
+2. Log an insight when you notice it: what you learned, where it came from, a short category in your own words (for example, a reorganization, a strategy shift, a funding change, market or economic conditions, regulation, weather, or another team’s initiative) and when it takes effect.
+3. Note why it matters to the value the project is meant to deliver, so that you stay aware of it.
+4. Keep it light. An entry needs no project resources to watch, and it does not belong in the RAID log unless it becomes a risk. Risks are managed through the risk process, not here.
+5. Review the log every two weeks and close entries that no longer matter.
+
+Used in steps: 1.3, 4.3
+
+[Open the template file](../02-Templates/T28-Environment-Log.xlsx)
+
+### T29 WBS Dictionary (.xlsx)
+Describes each work package in the WBS: what it delivers, how it will be accepted and who accepts it. It shows the requirements that point to it and its acceptance result.
+
+1. Add one row per work package, using its WBS ID from the Schedule (T08). The name is looked up, so it is typed only once.
+2. Describe what the work package delivers, and anything that is in or out of it, so the owner and the team read it the same way.
+3. Write its acceptance criteria and name one acceptor.
+4. The requirements in the Requirements Register (T06) that point to this WBS ID are counted for you.
+5. The number of its activities that are done, and its % complete, come from the Activity List (T30) and the Schedule.
+6. When the work package is accepted or rejected, record the decision in the Acceptance Log (T23) with its WBS ID. The dictionary shows the result.
+7. Work built in sprints needs one row for its branch, not one per backlog item. The Backlog (T25) holds the detail.
+
+Used in steps: 2.2
+
+[Open the template file](../02-Templates/T29-WBS-Dictionary.xlsx)
+
+### T30 Activity List (.xlsx)
+Lists the activities inside each work package, with owners, dates and progress. The Schedule’s % complete for a work package is calculated from its activities.
+
+1. Add one row per activity, using the WBS ID of its work package from the Schedule (T08). Give it an ID (for example 4.1-A1), a short name, an owner, a start date and a due date.
+2. Enter the effort, in hours or days. It is the activity’s weight when the work package’s % complete is worked out. A blank effort counts as 1.
+3. Each week, get an update from each activity’s owner, then enter the % complete and status. Done counts as 100%.
+4. When an activity is done, the person who checks it (usually the work package owner) confirms it, and the PM enters their name under Verified by, with the date.
+5. Watch the Flag column: Overdue, Blocked, or Outside work package dates (the activity’s dates fall outside the work package’s Schedule dates).
+6. When every activity in a work package is done, the Schedule shows the work package as Ready for acceptance. Its acceptor accepts the work package as a whole, and the PM records the decision in the Acceptance Log (T23). Activities are not accepted one by one.
+7. A work package with no activities works as before: type its % complete in the Schedule.
+
+Used in steps: 2.3, 3.2
+
+[Open the template file](../02-Templates/T30-Activity-List.xlsx)
+
 ## Appendix B. Agile quick reference
 
-The Hybrid track runs sprint-based delivery inside a plan with fixed milestones. This appendix covers what a project manager needs to run that combination. It is not a course in Scrum or any other framework; the sources at the end go deeper.
+Projects that run sprints do so inside a plan with fixed milestones. This appendix covers what a project manager needs to run that combination, on the Hybrid track or on a Technical project that works in sprints. It is not a course in Scrum or any other framework; the sources at the end go deeper.
 
 ### B.1 The sprint cycle
 
 A sprint is a fixed-length period, usually two to four weeks (Project Beacon uses two), in which the team turns the highest-priority backlog items into finished, usable work. The fixed length gives the team a rhythm, and it gives you a dependable unit for milestone planning. Five regular events keep the cycle running. The time limits below grow with sprint length: the first figure is for a two-week sprint and the second for a four-week sprint. For a three-week sprint, use the middle.
 
-1. Sprint planning. The Product Owner brings the top-priority items. The team decides how much it can finish and agrees a sprint goal: one sentence on why this sprint matters. Output: the sprint goal and the sprint backlog. Time limit: 4 hours (two-week sprint), 8 hours (four-week sprint).
+1. Sprint planning. The Product Owner brings the top-priority items. The team decides how much it can finish and agrees a sprint goal: one sentence on why this sprint matters. Output: the sprint goal and the sprint backlog (T26). Time limit: 4 hours (two-week sprint), 8 hours (four-week sprint).
 2. Daily stand-up. A 15-minute check where the team compares progress with the sprint goal and names blockers. It is for the team, not a status report to the PM.
 3. Backlog refinement. Ongoing work in which the Product Owner and team clarify, split and size upcoming items so they are ready for planning. Common guidance is to keep it to roughly a tenth of team capacity.
-4. Sprint review. At the end of the sprint the team shows working results to the Product Owner and stakeholders. The Product Owner accepts or rejects items against the Definition of Done, and feedback goes into the backlog. It doubles as your stakeholder demo and a checkpoint for the milestone plan. Time limit: 2 hours (two-week sprint), 4 hours (four-week sprint).
+4. Sprint review. At the end of the sprint the team shows working results to the Product Owner and stakeholders. The Product Owner accepts or rejects each item that meets the Definition of Done, against its acceptance criteria, and records the decision in the Acceptance Log (T23). Unfinished and rejected items return to the backlog, and feedback goes into it. It doubles as your stakeholder demo and a checkpoint for the milestone plan. Afterwards, record the sprint’s result in the Sprint Log (T27). Time limit: 2 hours (two-week sprint), 4 hours (four-week sprint).
 5. Sprint retrospective. The team looks at how it worked, picks one or two changes to try next sprint, and records any lessons for the Lessons Learned Register (T19). Time limit: 1.5 hours (two-week sprint), 3 hours (four-week sprint).
 
 ### B.2 Who does what
@@ -1558,13 +1692,17 @@ Use this rule of thumb: the PM owns when and how much money, the Product Owner o
 - Project Manager: owns milestones, budget, risks, stakeholders and vendors, and reads sprint results into the milestone plan. The PM does not reorder the backlog or assign sprint work.
 - Sponsor: accepts milestone deliverables at the gates.
 
-### B.3 Writing backlog items
+### B.3 Writing stories and backlog items
 
-Write each item as a short user story: “As a [type of user], I need [capability] so that [benefit].” Add acceptance criteria that say how anyone can tell the item works. Check each story against six qualities, which agile teams remember as INVEST: it can be built Independently, it is open to Negotiation, it delivers Value, the team can Estimate it, it is Small enough for one sprint, and it is Testable.
+Write each requirement that users will see as a short user story: “As a [type of user], I need [capability] so that [benefit].” The story describes the value the requirement promises. Add acceptance criteria that say how anyone can tell the requirement is met. Check each story against six qualities, which agile teams remember as INVEST: it can be built Independently, it is open to Negotiation, it delivers Value, the team can Estimate it, it is Small enough to deliver in a sprint or two, and it is Testable.
 
-Large items are called epics. Split an epic into stories before it enters a sprint.
+Large stories are called epics. Split an epic into smaller stories before its work enters the backlog.
 
-Acceptance criteria and the Definition of Done are different. Acceptance criteria belong to one item (“a volunteer can cancel a shift up to 24 hours before it starts”). The Definition of Done is a checklist that applies to every item (reviewed, tested, documented, accepted). An item is done only when it meets both. The Quality & Acceptance Plan (T13) records the Definition of Done, and the Requirements Register (T06) holds the stories.
+Requirements and backlog items are different things. A requirement is a specification: what the solution must do or achieve, with acceptance criteria and a named approver. Its user story describes the value it promises. It lives in the Requirements Register (T06). A backlog item is the work that delivers that promise, a piece of work or a capability to build in a sprint, and it lives in the Backlog (T25). Break each requirement down into one or more items and link each item to its requirement. One requirement may need several items, and an item such as a bug fix or technical debt may trace to no new requirement.
+
+How an item moves. Every item starts as a requirement. The requirement, with its user story, goes in the Requirements Register (T06) and names its approver, its acceptor and the WBS ID of the branch that holds the sprint work. The requirement is then broken down into backlog items, the work that delivers it, and the items go in the Backlog (T25). The Product Owner ranks the Backlog and can re-rank it at any time. At sprint planning the team pulls items into the Sprint Backlog (T26), which holds one sprint only and is rebuilt from empty each time. At the sprint review, the Product Owner accepts or rejects each item that meets the Definition of Done, and the decision goes in the Acceptance Log (T23) with the sprint number. An accepted item leaves the Backlog. A rejected item, or one that was not finished, returns to the Backlog and is ranked again, so one item can pass through several sprints. A requirement is accepted when every item that delivers it is accepted. If the requirement’s named acceptor accepted all of its items, the Requirements Register marks it Accepted by itself. If different people accepted different items, the acceptor decides on the whole requirement and the PM records that decision in the Acceptance Log, so that one named person is accountable for the whole. The Requirements Register shows each requirement’s status, from Not started to Accepted, with who accepted it and when, taken from the Backlog, the Sprint Backlog and the Acceptance Log.
+
+Acceptance criteria and the Definition of Done are different. Acceptance criteria belong to one story or requirement (“a volunteer can cancel a shift up to 24 hours before it starts”). The Definition of Done is a checklist that applies to every item (reviewed, tested, documented). Meeting it is the team’s own test of finished work. Acceptance is a separate decision by the Product Owner or approver. The Quality & Acceptance Plan (T13) records the Definition of Done, and the Decision Log (T17) records each change to it.
 
 ### B.4 Story mapping
 
@@ -1594,7 +1732,7 @@ The donor side (recurring gifts, nightly CRM sync) forms a second backbone, plan
 ### B.5 Planning releases and linking them to milestones
 
 1. Size the backlog. Give each item a relative size (story points or small, medium, large). Relative sizing is quicker and, over many items, about as reliable as hour estimates.
-2. Learn the team’s velocity. Velocity is the amount of work a team finishes in one sprint, counted in whatever unit the team estimates in. If the team sizes work in story points, velocity is the story points completed per sprint. Count only items that are fully done and meet the Definition of Done: a nearly finished item adds nothing. Before any sprint has finished, plan with a range and replace it with real numbers after the second or third sprint.
+2. Learn the team’s velocity. Velocity is the amount of work a team finishes in one sprint, counted in whatever unit the team estimates in. If the team sizes work in story points, velocity is the story points completed per sprint. Count only items that are fully done and meet the Definition of Done: a nearly finished item adds nothing. Record it in the Sprint Log (T27). Before any sprint has finished, plan with a range and replace it with real numbers after the second or third sprint.
 3. Work out what fits. Sprints available multiplied by the velocity range gives the scope the team can deliver by the date. Plan people at about 60 to 80% of their available project time, after subtracting meetings and leave (see the capacity guidance in the planning steps).
 4. Place milestones at sprint ends. A milestone tied to a sprint review has real evidence behind it.
 5. Re-forecast every sprint. When the date and the budget are fixed, scope is the variable. Use the MoSCoW lines (Must, Should, Could) to decide what moves when the forecast slips.
@@ -1616,7 +1754,7 @@ Watch for these common problems.
 
 ### B.7 Project Beacon in practice
 
-Sprint 2 (February 23 to March 6, 2026) delivered shift booking. Its goal, in one sentence: “A volunteer can see open shifts and book or cancel one.” The sprint backlog held R-02 (book and cancel) and R-03 (recurring shifts with capacity limits). Late in the sprint the work was about 80% complete, and the sprint review moved from March 6 to March 10. The same sprint carried the spike to test the CRM’s API limits (risk R-002). In that week’s status report, the PM reported the milestone view (the MVP pilot on March 27 on track, go-live still June 1 with one week of float used) and linked the sprint evidence to it, rather than reporting task activity.
+Sprint 2 (February 23 to March 6, 2026) delivered shift booking. Its goal, in one sentence: “A volunteer can see open shifts and book or cancel one.” The sprint backlog held the items for R-02 (book and cancel) and R-03 (recurring shifts with capacity limits), and the password reset item carried over from Sprint 1. Late in the sprint the work was about 80% complete, and the sprint review moved from March 6 to March 10. The same sprint carried the spike to test the CRM’s API limits (risk R-002). In that week’s status report, the PM reported the milestone view (the MVP pilot on March 27 on track, go-live still June 1 with one week of float used) and linked the sprint evidence to it, rather than reporting task activity.
 
 ### B.8 Where to learn more
 
@@ -1633,8 +1771,11 @@ These sources are also listed in Appendix D.
 Short definitions in plain words, listed alphabetically. Each term appears in the playbook, the templates, the example workbook or Appendix B.
 
 - **Acceptance criteria.** The specific conditions an item must meet before the person accepting it agrees it is done.
+- **Acceptance Log.** A running record of every acceptance decision for backlog items, deliverables and requirements: the evidence, who accepted or approved it, the date, the sprint for an item, and the decision (Accepted or Rejected).
+- **Activity list.** The steps inside each work package, with owners, dates and progress. In the workbook it drives each work package’s % complete.
 - **Assumption.** Something believed true for planning purposes but not yet confirmed. Record it in the RAID log so someone checks.
 - **Backlog (product backlog).** The ordered list of everything that might be built, kept by the Product Owner. The top is detailed and ready; the bottom is rough.
+- **Backlog item.** A piece of work that delivers a requirement and is built in a sprint, such as a feature, task, fix or spike. Each item is linked to its requirement. An accepted item leaves the backlog; a rejected or unfinished one returns to it.
 - **Baseline.** The approved version of the scope, schedule or budget that you measure progress against. It changes only through change control.
 - **Benefits realization.** Confirming, after delivery, that the expected benefits actually appeared, with data.
 - **Burn-up chart.** A chart of total scope and completed work over time. The gap between the lines is the work remaining.
@@ -1648,11 +1789,12 @@ Short definitions in plain words, listed alphabetically. Each term appears in th
 - **Critical path.** The longest chain of dependent tasks. A delay to any task on it delays the finish date.
 - **Cut-over.** The moment when users and data move from the old way of working to the new one.
 - **DAST (dynamic application security testing).** Testing a running application from the outside for security weaknesses.
-- **Definition of Done.** A checklist that every backlog item must meet before the team calls it finished.
+- **Definition of Done.** A checklist that every backlog item must meet before the team calls it finished. It is not the same as acceptance, which is a separate decision by the Product Owner or approver.
 - **Deliverable.** Something the project produces that someone can inspect and accept.
 - **Dependency.** A relationship in which one task, or an outside event, must happen before another can start or finish.
 - **Earned value.** The budgeted value of the work actually completed. Used to compare progress with spending (see CPI and SPI).
-- **Epic.** A large backlog item that must be split into stories before the team can build it.
+- **Environment Log.** A short record of insights about the wider environment in which the project is meant to deliver value, such as organizational changes, funding cycles, market or regulatory conditions, and other teams’ initiatives. It keeps the PM aware of the bigger picture. It is not a risk register.
+- **Epic.** A large user story that must be split into smaller stories before its work can be built.
 - **Float (slack).** How long a task can slip without delaying the finish date. Tasks on the critical path have none.
 - **Gantt chart.** A bar chart of tasks against time, showing start, finish and dependencies.
 - **Gate.** A planned decision point where a sponsor or committee decides whether the project may continue to the next stage.
@@ -1672,6 +1814,7 @@ Short definitions in plain words, listed alphabetically. Each term appears in th
 - **RAG (red, amber, green).** A traffic-light rating of status.
 - **RAID log.** One register of Risks, Assumptions, Issues and Dependencies.
 - **Release.** A set of finished work made available to users.
+- **Requirement.** A specification of what the solution must do or achieve, with acceptance criteria and a named approver. Its user story describes the value it promises; backlog items are the work that delivers it.
 - **Retrospective.** A team meeting to review how the work went and agree improvements.
 - **Risk.** An uncertain event that, if it happens, affects the project. Score it by probability and impact.
 - **Rolling-wave planning.** Planning near-term work in detail and later work at a higher level, adding detail as it gets closer.
@@ -1684,17 +1827,20 @@ Short definitions in plain words, listed alphabetically. Each term appears in th
 - **SOW (statement of work).** The document describing what a vendor will do, by when, to what standard and for what payment.
 - **SPI (Schedule Performance Index).** Earned value divided by planned value. Below 1.0 means behind schedule.
 - **Sprint.** A fixed-length period in which a team completes a chosen set of backlog items.
+- **Sprint backlog.** The backlog items the team commits to finish in one sprint, chosen at sprint planning. It is rebuilt from empty for each sprint.
 - **Sprint goal.** One sentence that states the purpose of a sprint.
+- **Sprint Log.** A record of each sprint’s goal, plan and result, including sprints that deliver nothing: work planned and completed, velocity, carry-over items and the retrospective headline.
 - **SSO (single sign-on).** One login that gives access to several systems.
 - **Stakeholder.** Anyone affected by the project or able to affect it.
 - **Story map.** A picture of the user’s journey with stories stacked beneath each step, sliced into releases.
 - **Technical debt.** The future cost of shortcuts taken in design or code. It is tracked as backlog work.
 - **Threat model.** A structured review of how a system could be attacked and which controls address each threat.
-- **Traceability.** Links from each requirement to the work and the test that cover it.
+- **Traceability.** Links from each requirement to the backlog items or deliverables and the tests that cover it.
 - **UAT (user acceptance testing).** Testing by the people who will use the product, to confirm it meets their needs.
 - **User story.** A short description of a need from the user’s point of view: who, what and why.
 - **Velocity.** The amount of work a team finishes in one sprint, counted in the unit the team estimates in (such as story points), and counting only fully finished items. Teams use their recent average to plan how much to take on, and watch the trend for signs that they are speeding up or are blocked.
 - **WBS (work breakdown structure).** A breakdown of the project scope into smaller deliverables and work packages.
+- **WBS dictionary.** A companion to the WBS that describes each work package: what it delivers, its acceptance criteria and who accepts it.
 - **WCAG (Web Content Accessibility Guidelines).** The W3C standard for making web content usable by people with disabilities.
 - **Work package.** The lowest level of the WBS: a piece of work small enough to assign, estimate and track.
 
@@ -1722,7 +1868,89 @@ These works were consulted for ideas, coverage and background. No affiliation wi
 18. Project Management Institute and Agile Alliance (2017). Agile Practice Guide. Background for the Hybrid track.
 19. Beck, K. et al. (2001). Manifesto for Agile Software Development. https://agilemanifesto.org
 
-## Appendix E. License & credits
+## Appendix E. Recovery plays by cause
+
+Most projects drift off track at some point. This appendix lists common causes, the signs that point to each one, and a first response. It adds no new steps: each response points back to the steps and templates that already cover it.
+
+### E.1 Start with a health check
+
+Before choosing a response, find out where the project really stands.
+
+1. Baselines. Compare scope, schedule and budget with the approved baselines, and measure how far actual progress has moved from them.
+2. Risks and issues. List the open Red and Amber items and who owns each one.
+3. Sponsor. Is the sponsor engaged, and do they know the real position?
+4. Goals. Do the original goals and success criteria still hold?
+
+Then choose one of three paths: recover within the baselines, re-baseline through change control (Step 4.2), or escalate to the sponsor for a decision (Step 4.5). Never re-baseline silently. A changed baseline needs a logged decision.
+
+### E.2 Scope creep
+
+- Signs: requests are being done without a change request; the team is adding small extras; the backlog grows with no matching change in dates or budget.
+- First response: stop absorbing requests. Raise each one as a change (on a Change Request Form where the project uses one, otherwise through the Product Owner and the backlog), log it, and show its impact on schedule, cost and risk. Offer the sponsor three choices: approve it with the extra time or money, trade it for something already in scope, or defer it to a later phase. Remind everyone of the out-of-scope list in the charter.
+- Where to look: Steps 1.5, 2.2 and 4.2.
+
+### E.3 Missed deadlines
+
+- Signs: float is used up; milestones slip; tasks sit at 90% complete; velocity falls while scope stays the same.
+- First response: re-forecast from actual progress, not from the original plan. Find the critical path and what is driving the slip. Then offer options: cut scope using the MoSCoW lines, add capacity only where it will help (new people need time before they are useful), or move the date through change control.
+- Where to look: Steps 2.3, 4.1 and 4.5.
+
+### E.4 Changing requirements
+
+- Signs: stories are rewritten again and again; people disagree about what done means; work is redone after review.
+- First response: separate changes inside agreed scope (reordering the backlog, which needs no change request) from changes to scope, a milestone or the budget (which do). Confirm who approves each requirement and who accepts it, and review the acceptance criteria with that person. If the Definition of Done changes, log it as a decision.
+- Where to look: Steps 2.1, 2.8, 4.2 and 4.4.
+
+### E.5 Over budget
+
+- Signs: spend on a budget line is more than 10% over plan; the contingency reserve is falling faster than the work is finishing; nobody can say what it will cost to finish.
+- First response: find which lines are over and why. Forecast the cost to finish from the work that remains, not from the original estimate. Then offer options: reduce scope, find savings, use the reserve as the plan allows, or ask the sponsor for more funding through change control.
+- Where to look: Steps 2.4 and 4.1.
+
+Earned value formulas (from the PMI method). Each term is spelled out with its abbreviation.
+
+- PV (planned value): the budget for the work that should be finished by now. EV (earned value): the budget for the work actually finished. AC (actual cost): what has been spent so far. BAC (budget at completion): the total approved budget.
+- SV (schedule variance) = EV − PV. A negative number means behind schedule.
+- CV (cost variance) = EV − AC. A negative number means over budget.
+- SPI (schedule performance index) = EV ÷ PV. Below 1.0 means behind schedule.
+- CPI (cost performance index) = EV ÷ AC. Below 1.0 means the work is costing more than planned.
+- EAC (estimate at completion) = BAC ÷ CPI, if the current cost performance will continue. Or EAC = AC + ETC, using a fresh bottom-up estimate of the remaining work. The Project Workbook uses the second method: it adds up each budget line’s actual cost and forecast to complete.
+- ETC (estimate to complete) = EAC − AC: what it should cost to finish.
+- VAC (variance at completion) = BAC − EAC. A negative number means the project is forecast to finish over budget.
+- TCPI (to-complete performance index) = (BAC − EV) ÷ (BAC − AC): the cost performance needed from now on to finish within the budget. A number well above 1.0 means the budget is unlikely to hold.
+
+### E.6 Nobody knows what is left
+
+- Signs: the schedule and backlog are out of date; different people give different answers; percent complete does not match what has been delivered.
+- First response: rebuild the list of remaining work, split into done, in progress and not started. Give every item an owner and an estimate to finish. Check the done items against the Acceptance Log. Then re-forecast the date and the cost from that list.
+- Where to look: Steps 2.2, 3.2, 4.1 and 4.4.
+
+### E.7 An overloaded or short-staffed team
+
+- Signs: people are planned beyond 60 to 80% of their available time; overtime is routine; mistakes and rework are rising.
+- First response: re-plan to a realistic load. Move work, add people or cut scope. Cross-train so that no task depends on one person. Do not ask the same people to catch up by working longer.
+- Where to look: Steps 2.5, 3.1 and 3.2.
+
+### E.8 Quality or security failures
+
+- Signs: defects or critical vulnerabilities are rising; tests fail late; items marked done do not meet the Definition of Done.
+- First response: stop starting new work until the cause is understood. Fix and re-test, and check that the Definition of Done is being applied. Do not go live with a critical No on the readiness checklist unless the sponsor and the Security Lead record an exception.
+- Where to look: Steps 3.3 and 4.4, and the go-live checklist (T22).
+
+### E.9 A vendor slipping
+
+- Signs: a vendor misses a date, gives no firm date, or delivers work that fails acceptance.
+- First response: get a firm date in writing and check what the contract (SOW) says about dates and remedies. Look for ways to keep moving: do other work first, build against a stub or sandbox, or ask for a partial delivery. Log the risk or issue, and escalate with options if a milestone will move.
+- Where to look: Steps 3.6 and 4.3.
+
+### E.10 A sponsor who is not engaged
+
+- Signs: decisions wait for weeks; meetings are missed; the sponsor hears about problems late.
+- First response: find out why. Talk to the sponsor directly, not by email. Ask what is getting in the way: time, priorities, confidence in the project, or unclear role expectations.
+- Where to look: Steps 1.3, 4.3 and 4.5.
+
+
+## Appendix F. License & credits
 
 © 2026 James Pearson. This playbook, its templates and the Project Workbook are licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License (https://creativecommons.org/licenses/by-nc-sa/4.0/).
 
