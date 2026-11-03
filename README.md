@@ -35,6 +35,20 @@ used.
 - LinkedIn: [linkedin.com/in/jamespearson1562](https://www.linkedin.com/in/jamespearson1562)
 - GitHub: [james-s-pearson](https://github.com/james-s-pearson)
 
+## Certifications
+
+<a href="https://www.credly.com/badges/f65e632b-0d78-4aa1-b1f5-122cacaba289/public_url"><img src="certifications/PMP-badge.png" alt="PMP badge" width="80"></a>
+<a href="https://certification.scrumalliance.org/accounts/1711812-james-pearson/certifications/2025616-csm"><img src="certifications/CSM-badge.png" alt="CSM badge" width="80"></a>
+
+- **Project Management Professional (PMP)**, Project Management Institute,
+  granted July 2026, valid to July 2029:
+  [verify on Credly](https://www.credly.com/badges/f65e632b-0d78-4aa1-b1f5-122cacaba289/public_url),
+  [certificate (PDF)](certifications/PMP-Certificate.pdf)
+- **Certified ScrumMaster (CSM)**, Scrum Alliance, issued December 2024,
+  active through December 2026:
+  [verify on Scrum Alliance](https://certification.scrumalliance.org/accounts/1711812-james-pearson/certifications/2025616-csm),
+  [certificate (PDF)](certifications/CSM-Certificate.pdf)
+
 ## TryHackMe
 
 I build hands-on security skills on TryHackMe. Figures as of 15 October 2026.
