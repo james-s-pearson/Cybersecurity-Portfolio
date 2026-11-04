@@ -2,7 +2,7 @@
 
 Copyright (c) 2026 James Pearson
 
-**Project Manager in a Box** (the playbook, the templates in `02-Templates`, the Project Workbook in `03-Project-Workbook`, and the examples in `05-Examples`) is licensed under the **Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License (CC BY-NC-SA 4.0)**.
+**Project Manager in a Box** (the playbook, the templates in `02-Templates`, the Project Workbooks in `03-Project-Workbook`, and the examples in `05-Examples`) is licensed under the **Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License (CC BY-NC-SA 4.0)**.
 
 Full legal code: https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode
 Human-readable summary: https://creativecommons.org/licenses/by-nc-sa/4.0/

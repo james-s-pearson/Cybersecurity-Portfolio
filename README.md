@@ -75,10 +75,10 @@ commit history shows the work as it happens.
   with a guide to setting up a clean Kali VM for investigating real-world
   software bugs.
 - **[Project Manager in a Box](project-manager-in-a-box/)**: a project
-  management playbook with 30 templates, a workbook and a Claude skill, for
-  hybrid and technical (IT and security) projects. I designed and directed it,
-  an AI assistant generated it, and I review and edit it. Version 0.2, under
-  its own licence (see [Licence](#licence)).
+  management playbook with 45 templates, two workbooks and a Claude skill, for
+  agile, hybrid and technical (IT and security) projects. I designed and
+  directed it, an AI assistant generated it, and I review and edit it. Version
+  0.3, under its own licence (see [Licence](#licence)).
 
 The security project case study is the next project.
 

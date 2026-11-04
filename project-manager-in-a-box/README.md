@@ -1,8 +1,8 @@
-# Project Manager in a Box (v0.2 prototype)
+# Project Manager in a Box (v0.3 prototype)
 
-**Version 0.2 · released November 2026.** This folder is always the latest version. To check you have it, compare the version line on the first page of the playbook with the one here. Older versions stay available through this repository’s tags (for example `pm-in-a-box-v0.1`): open the repository on GitHub, choose **Releases** or the branch/tag menu, and pick a tag.
+**Version 0.3 · released November 2026.** This folder is always the latest version. To check you have it, compare the version line on the first page of the playbook with the one here. Older versions stay available through this repository’s tags (for example `pm-in-a-box-v0.1`): open the repository on GitHub, choose **Releases** or the branch/tag menu, and pick a tag.
 
-A step-by-step project management playbook for **Hybrid** and **Technical (IT + Security)** projects, with 30 templates and a fill-in-ready Excel workbook that has a live dashboard.
+A step-by-step project management playbook for **Hybrid**, **Agile** and **Technical (IT + Security)** projects, with ready-to-use templates and a fill-in-ready Excel workbook for each track, each with a live dashboard. Choose Agile or Hybrid, then add Technical if the project changes production systems, data or access.
 By James Pearson · CC BY-NC-SA 4.0 (see `LICENSE.md`).
 
 ## How this was made
@@ -11,7 +11,7 @@ Written and assembled by James Pearson with help from an AI assistant (Anthropic
 
 ## Status and support
 
-This is a **v0.2 prototype**, released as is and without warranty of any kind. It is not legal, financial, security or professional advice. Check anything you rely on, especially the Go-Live Readiness & Security Checklist (T22), against your own organization's rules. I may not be able to answer every question.
+This is a **v0.3 prototype**, released as is and without warranty of any kind. It is not legal, financial, security or professional advice. Check anything you rely on, especially the Go-Live Readiness & Security Checklist (T22), against your own organization's rules. I may not be able to answer every question.
 
 ## Using this at work
 
@@ -19,24 +19,32 @@ Using the templates and workbook to run your own projects, including at work, is
 
 ## Start here
 
-1. **Read the playbook.** On GitHub, open `01-Playbook/Playbook-Preview.md`, or download `01-Playbook/Project-Manager-in-a-Box.pdf` for clickable links. For the full web book, download **`Project-Manager-in-a-Box.html`** and open it in your browser: a sidebar table of contents, a track switch (Both / Hybrid / Technical) and download buttons for every template.
-2. Open **`05-Examples/Project-Workbook-EXAMPLE-Project-Beacon.xlsx`** to see a finished project (the fictional Project Beacon), then use **`03-Project-Workbook/Project-Workbook.xlsx`** for your own. The same folder holds five filled-in Word examples: a charter, a final status report, a closeout report, an acceptance sign-off and a change request form.
+1. **Read the playbook.** For the full web book, download **`Project-Manager-in-a-Box.html`** and open it in your browser: a sidebar table of contents, a **Track** switch (Agile or Hybrid), a **Technical** on/off switch, and download buttons for the templates of the track you choose. On GitHub, open `01-Playbook/Playbook-Preview.md` (Hybrid) or `01-Playbook/Playbook-Preview-Agile.md` (Agile), or download the PDF for your track for clickable links.
+2. Open the finished example for your track (the fictional Project Beacon, told once on each track): **`05-Examples/Project-Workbook-EXAMPLE-Project-Beacon.xlsx`** (Hybrid) or **`05-Examples/Project-Workbook-Agile-EXAMPLE-Project-Beacon.xlsx`** (Agile). Then use the blank workbook for your track in `03-Project-Workbook/`. `05-Examples/` also holds five filled-in Word examples for each track: a charter, a final status report, a closeout report, an acceptance sign-off and a change request form.
 
 ## What's in the folder
 
 | Folder / file | Contents |
 |---|---|
-| `Project-Manager-in-a-Box.html` | Web book (5 chapters, 33 steps, template library, recovery plays, license) |
-| `01-Playbook/Project-Manager-in-a-Box.pdf` | Print/PDF edition with a clickable contents page and PDF bookmarks. For clickable links, download the PDF instead of viewing it on GitHub. |
-| `01-Playbook/Playbook-Preview.md` | Markdown preview of the full text, for review and editing |
-| `02-Templates/` | T01–T30: 11 Word templates and 19 Excel templates, each with a built-in usage guide |
-| `03-Project-Workbook/` | Blank Project Workbook (22 tabs) with a live dashboard |
-| `05-Examples/` | Worked examples from the fictional Project Beacon: the finished workbook, plus a filled-in charter (T02), final status report (T15), closeout report (T20), acceptance sign-off (T21) and change request form (T24) |
+| `Project-Manager-in-a-Box.html` | Web book with both tracks (5 chapters: 33 steps on the Hybrid track, 35 on the Agile track; template library, recovery plays, license) |
+| `01-Playbook/Project-Manager-in-a-Box.pdf` | Hybrid track, with the Technical guidance: print/PDF edition with a clickable contents page and PDF bookmarks. For clickable links, download the PDF instead of viewing it on GitHub. |
+| `01-Playbook/Project-Manager-in-a-Box-Agile.pdf` | Agile track, with the Technical guidance, in the same format |
+| `01-Playbook/Playbook-Preview.md`, `Playbook-Preview-Agile.md` | Markdown previews of the full text for each track, for review and editing |
+| `02-Templates/` | T01–T30 (11 Word templates and 19 Excel templates), plus 15 Agile versions whose names end in `-Agile`; each has a built-in usage guide |
+| `03-Project-Workbook/` | Blank Project Workbook for each track, with a live dashboard: `Project-Workbook.xlsx` (Hybrid, 22 tabs) and `Project-Workbook-Agile.xlsx` (Agile, 20 tabs) |
+| `05-Examples/` | Worked examples from the fictional Project Beacon, told on each track: the finished workbook, plus a filled-in charter (T02), final status report (T15), closeout report (T20), acceptance sign-off (T21) and change request form (T24) |
 | `04-Claude-Skill/` | `project-manager-in-a-box` skill so Claude can run projects using this playbook |
 | `LICENSE.md` | CC BY-NC-SA 4.0 terms and how to credit |
 
 ## What changed
 
+- **v0.3 (November 2026):**
+  - A new **Agile track** for projects that run entirely in sprints, inside three limits set before work starts: an end date, a budget and an out-of-scope statement. The web book switches between Agile and Hybrid, with a separate Technical switch; each track has its own PDF, preview, workbook and examples.
+  - On the Agile track: the Agile Project Manager role, two Agile-only steps (3.8 Refine the backlog, 3.9 Release an increment), a release plan and forecast in place of the WBS and schedule, requirements grouped into features, and change control that protects the three limits.
+  - 15 Agile template files (names end in `-Agile`) and an Agile Project Workbook (20 tabs) whose Dashboard forecasts the finish from velocity.
+  - Project Beacon retold on the Agile track, with its own workbook and five Word examples.
+  - The Delivery Approach worksheet (T04) now chooses the track: Agile or Hybrid, with Technical yes or no.
+  - The web book's workbook panel now lists the 22 Hybrid tabs correctly, and long links no longer widen the page on phones.
 - **v0.2 (November 2026):**
   - Eight new templates, each also a tab in the workbook (now 22 tabs), apart from the Word form: Acceptance Log (T23), Change Request Form (T24, Word), Backlog (T25), Sprint Backlog (T26), Sprint Log (T27), Environment Log (T28), WBS Dictionary (T29) and Activity List (T30).
   - Plan-driven work can be broken into activities in the Activity List (T30), which calculates each work package's % complete.

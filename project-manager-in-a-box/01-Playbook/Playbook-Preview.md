@@ -1,7 +1,9 @@
 # Project Manager in a Box
-*A step-by-step playbook for Hybrid and Technical projects*
+*A step-by-step playbook for Hybrid, Agile and Technical projects*
 
-By James Pearson · Version 0.2 (prototype) · Released November 2026 · CC BY-NC-SA 4.0
+By James Pearson · Version 0.3 (prototype) · Released November 2026 · CC BY-NC-SA 4.0
+
+**This preview shows the Hybrid track, with the Technical guidance.** The other track is in [Playbook-Preview-Agile.md](Playbook-Preview-Agile.md).
 
 **Latest version and all files:** [https://github.com/james-s-pearson/Cybersecurity-Portfolio/tree/main/project-manager-in-a-box](https://github.com/james-s-pearson/Cybersecurity-Portfolio/tree/main/project-manager-in-a-box). Links in this preview open the template files in this folder on GitHub.
 
@@ -54,11 +56,13 @@ By James Pearson · Version 0.2 (prototype) · Released November 2026 · CC BY-N
 
 ## Tracks
 
-**Hybrid track.** For projects that mix plan-driven work (fixed milestones, budgets, procurement, compliance) with iterative work (sprints, backlogs, frequent feedback). It is typical of business, operations, marketing and nonprofit programs, and of any project where some workstreams are predictable and others are not.
+**Agile track.** For projects that run entirely in sprints from a product backlog, with a named Product Owner, inside three limits set before work starts: a start and end date, a budget, and an out-of-scope statement. Inside those limits, what gets built is decided sprint by sprint.
+
+**Hybrid track.** For projects that mix plan-driven work (fixed milestones, budgets, procurement, compliance) with iterative work (sprints, backlogs, frequent feedback). It is typical of business, operations, marketing and nonprofit programs, and of any project where some workstreams are predictable and others are not. Choose Hybrid over Agile when some of the work has to follow a fixed plan of its own.
 
 **Technical track (IT + Security).** For software, infrastructure, cloud, data and cybersecurity projects. It adds the gates technical work needs: architecture and security review, environments, test strategy, change advisory board (CAB) approval, cut-over and rollback, compliance evidence and handover to operations.
 
-The two tracks combine. The Technical track says which gates and checks apply; the Hybrid track says how iterative work runs inside a plan. A software project that works in sprints applies both. Every callout labelled ‘Hybrid’ in the steps applies to any project that runs sprints, whatever its track.
+Choose one approach, Agile or Hybrid, with the Track buttons at the top of the page. Then switch Technical on if the project changes production systems, data or access. On the Agile track the whole project runs in sprints, inside three limits set before it starts. On the Hybrid track, sprints run inside a plan with fixed milestones. The Technical track adds the gates and checks technical work needs, on either approach. The choice changes the text of the steps, the templates you are offered and the workbook you download. The two PDFs are printed with Technical on.
 
 ## Tailoring
 
@@ -1327,12 +1331,13 @@ Used in steps: 1.3, 2.7, 4.3
 [Open the template file](../02-Templates/T03-Stakeholder-Register-Power-Interest-Grid.xlsx)
 
 ### T04 Delivery Approach & Tailoring Worksheet (.xlsx)
-Chooses predictive, agile or hybrid delivery for each workstream, and records which playbook steps to scale up or down.
+Chooses the track for the project, Agile or Hybrid, decides whether the Technical track applies, and records which playbook steps to scale up or down.
 
 1. Score each workstream on the eight suitability questions (1 = predictive, 5 = agile).
-2. An average of 1–2.4 suggests predictive, 2.5–3.4 hybrid and 3.5–5 agile.
-3. Pick a size (Small/Medium/Large) using the tailoring table in the playbook.
-4. Record every step you will skip or simplify, with the reason, so auditors and successors understand your choices.
+2. Agile: every workstream averages 3.5 or more, a Product Owner can be named, and the project can work inside three limits. Otherwise Hybrid.
+3. Technical: yes if the project changes production systems, data or access, or has security, privacy or regulatory obligations.
+4. Pick a size (Small/Medium/Large) using the tailoring table in the playbook.
+5. Record every step you will skip or simplify, with the reason, so auditors and successors understand your choices.
 
 Used in steps: 1.4
 
@@ -1773,6 +1778,7 @@ Short definitions in plain words, listed alphabetically. Each term appears in th
 - **Acceptance criteria.** The specific conditions an item must meet before the person accepting it agrees it is done.
 - **Acceptance Log.** A running record of every acceptance decision for backlog items, deliverables and requirements: the evidence, who accepted or approved it, the date, the sprint for an item, and the decision (Accepted or Rejected).
 - **Activity list.** The steps inside each work package, with owners, dates and progress. In the workbook it drives each work package’s % complete.
+- **Agile Project Manager (Agile PM).** The project manager on the Agile track. See the roles section for the definition.
 - **Assumption.** Something believed true for planning purposes but not yet confirmed. Record it in the RAID log so someone checks.
 - **Backlog (product backlog).** The ordered list of everything that might be built, kept by the Product Owner. The top is detailed and ready; the bottom is rough.
 - **Backlog item.** A piece of work that delivers a requirement and is built in a sprint, such as a feature, task, fix or spike. Each item is linked to its requirement. An accepted item leaves the backlog; a rejected or unfinished one returns to it.
@@ -1792,10 +1798,13 @@ Short definitions in plain words, listed alphabetically. Each term appears in th
 - **Definition of Done.** A checklist that every backlog item must meet before the team calls it finished. It is not the same as acceptance, which is a separate decision by the Product Owner or approver.
 - **Deliverable.** Something the project produces that someone can inspect and accept.
 - **Dependency.** A relationship in which one task, or an outside event, must happen before another can start or finish.
+- **Developers.** The people on a Scrum team who build, test and deliver each increment.
 - **Earned value.** The budgeted value of the work actually completed. Used to compare progress with spending (see CPI and SPI).
 - **Environment Log.** A short record of insights about the wider environment in which the project is meant to deliver value, such as organizational changes, funding cycles, market or regulatory conditions, and other teams’ initiatives. It keeps the PM aware of the bigger picture. It is not a risk register.
 - **Epic.** A large user story that must be split into smaller stories before its work can be built.
+- **Feature.** A capability users will recognize, such as “Shift booking”. On the Agile track, features group requirements in the Requirements Register and the Acceptance Log.
 - **Float (slack).** How long a task can slip without delaying the finish date. Tasks on the critical path have none.
+- **Forecast (sprints left).** The scope remaining at the last sprint review divided by the average velocity, rounded up. It gives the forecast finish date.
 - **Gantt chart.** A bar chart of tasks against time, showing start, finish and dependencies.
 - **Gate.** A planned decision point where a sponsor or committee decides whether the project may continue to the next stage.
 - **Hybrid delivery.** Mixing plan-driven management (fixed milestones, budget, approvals) with iterative delivery (sprints and a backlog).
@@ -1808,12 +1817,15 @@ Short definitions in plain words, listed alphabetically. Each term appears in th
 - **MoSCoW.** A priority scheme: Must, Should, Could, Won’t this time.
 - **MVP (minimum viable product).** The smallest version of a product that real users can use and give feedback on.
 - **OKR (objectives and key results).** A goal-setting method that pairs an ambition with measurable results.
+- **Out-of-scope statement.** What the project will not include, however the backlog changes. One of the three limits on the Agile track.
 - **PMO (project management office).** A group that sets project standards, supports project managers and often tracks the portfolio.
+- **Product goal.** The future state of the product that the backlog serves. The Product Owner is accountable for it.
 - **Product Owner.** The person who owns the backlog, decides its order and accepts or rejects finished work.
 - **RACI.** A matrix showing who is Responsible, Accountable, Consulted and Informed for each deliverable or decision.
 - **RAG (red, amber, green).** A traffic-light rating of status.
 - **RAID log.** One register of Risks, Assumptions, Issues and Dependencies.
 - **Release.** A set of finished work made available to users.
+- **Release plan.** The sprints between the start and end dates, with the releases, milestones and fixed events.
 - **Requirement.** A specification of what the solution must do or achieve, with acceptance criteria and a named approver. Its user story describes the value it promises; backlog items are the work that delivers it.
 - **Retrospective.** A team meeting to review how the work went and agree improvements.
 - **Risk.** An uncertain event that, if it happens, affects the project. Score it by probability and impact.
@@ -1835,6 +1847,7 @@ Short definitions in plain words, listed alphabetically. Each term appears in th
 - **Story map.** A picture of the user’s journey with stories stacked beneath each step, sliced into releases.
 - **Technical debt.** The future cost of shortcuts taken in design or code. It is tracked as backlog work.
 - **Threat model.** A structured review of how a system could be attacked and which controls address each threat.
+- **Three limits.** The start and end date, the budget and the out-of-scope statement: the baselines on the Agile track.
 - **Traceability.** Links from each requirement to the backlog items or deliverables and the tests that cover it.
 - **UAT (user acceptance testing).** Testing by the people who will use the product, to confirm it meets their needs.
 - **User story.** A short description of a need from the user’s point of view: who, what and why.
@@ -1862,10 +1875,10 @@ These works were consulted for ideas, coverage and background. No affiliation wi
 12. Project Management Institute. Qualitative risk assessment (PMI Learning Library). Background for the five-level probability and impact scale in Step 2.6. https://www.pmi.org/learning/library/qualitative-risk-assessment-cheaper-faster-3188
 13. Scrum Alliance. Capacity planning for a Scrum team. Background for the 60 to 80% capacity guidance in Steps 2.5 and 3.2. https://resources.scrumalliance.org/Article/capacity-planning-scrum-team
 14. Tero Parviainen (2016). A Dash of Queueing Theory. Background for the point that waiting grows sharply as utilization nears 100%. https://teropa.info/blog/2016/04/02/a-dash-of-queueing-theory
-15. Schwaber, K. and Sutherland, J. (2020). The Scrum Guide. Background for Appendix B (sprint events, roles and the Definition of Done). https://scrumguides.org
+15. Schwaber, K. and Sutherland, J. (2020). The Scrum Guide. Background for Appendix B (sprint events, roles and the Definition of Done) and for the Agile track’s roles (Product Owner, Scrum Master, Developers). https://scrumguides.org
 16. Patton, J. (2014). User Story Mapping. O’Reilly Media. Background for story mapping in Appendix B.
 17. Wake, B. (2003). INVEST in Good Stories, and SMART Tasks. Background for writing backlog items in Appendix B. https://xp123.com/invest-in-good-stories-and-smart-tasks/
-18. Project Management Institute and Agile Alliance (2017). Agile Practice Guide. Background for the Hybrid track.
+18. Project Management Institute and Agile Alliance (2017). Agile Practice Guide. Background for the Hybrid and Agile tracks.
 19. Beck, K. et al. (2001). Manifesto for Agile Software Development. https://agilemanifesto.org
 
 ## Appendix E. Recovery plays by cause
@@ -1952,7 +1965,7 @@ Earned value formulas (from the PMI method). Each term is spelled out with its a
 
 ## Appendix F. License & credits
 
-© 2026 James Pearson. This playbook, its templates and the Project Workbook are licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License (https://creativecommons.org/licenses/by-nc-sa/4.0/).
+© 2026 James Pearson. This playbook, its templates and the Project Workbooks are licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License (https://creativecommons.org/licenses/by-nc-sa/4.0/).
 
 - **You may** share and adapt the material.
 - **Attribution**: you must credit James Pearson, link to the license and say whether you made changes.
