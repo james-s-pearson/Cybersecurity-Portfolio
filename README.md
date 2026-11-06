@@ -92,12 +92,11 @@ commit history shows the work as it happens.
   directed it, an AI assistant generated it, and I review and edit it. Version
   0.3, under its own licence (see [Licence](#licence)).
 
-The security project case study is the next project.
-
 ## Roadmap
 
-Planned work, in order. Each item moves into the Projects section when I start
-it.
+Planned work. Each item moves into the Projects section when I start it. The
+CompTIA Security+ is my priority until my exam, so I may take these out of
+order, as time allows.
 
 1. **Security project case study:** a fictional multi-factor authentication
    rollout run as a project (charter, RAID log, status report, lessons
@@ -112,8 +111,6 @@ it.
    rules and a privacy-preserving breach lookup.
 6. **Failed-login detector (Python):** brute-force detection mapped to MITRE
    ATT&CK T1110.
-7. **Indicator enrichment (Python, stretch):** threat-intelligence lookups,
-   with API keys kept out of Git.
 
 Alongside these:
 
@@ -132,11 +129,11 @@ Alongside these:
 - **Customer-facing roles at security and GRC vendors:** Project Manager in a
   Box and the case study's customer success plan (running a deployment as a
   project), the control and risk projects (what GRC platforms do for
-  customers), and the API projects (hands-on web API work).
+  customers), and the password policy project (hands-on web API work).
 - **GRC:** the control evidence tracker, risk register, vulnerability report
   and password policy projects.
-- **SOC and threat intelligence:** the vulnerability report, failed-login
-  detector and indicator enrichment, plus my TryHackMe work.
+- **SOC:** the vulnerability report and failed-login detector, plus my TryHackMe
+  work.
 
 Each project's README will also list the Security+ topics it builds.
 
