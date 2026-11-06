@@ -49,6 +49,10 @@ used.
   [verify on Scrum Alliance](https://certification.scrumalliance.org/accounts/1711812-james-pearson/certifications/2025616-csm),
   [certificate (PDF)](certifications/CSM-Certificate.pdf)
 
+### In progress
+
+- **CompTIA Security+ (SY0-701):** target December 2026.
+
 ### Course badges
 
 <a href="https://www.credly.com/badges/280b0280-fc18-4b28-a18c-c68f5b394687/public_url"><img src="certifications/Cisco-Intro-to-Cybersecurity-badge.png" alt="Cisco Introduction to Cybersecurity badge" width="80"></a>
