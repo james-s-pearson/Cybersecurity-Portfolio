@@ -49,6 +49,14 @@ used.
   [verify on Scrum Alliance](https://certification.scrumalliance.org/accounts/1711812-james-pearson/certifications/2025616-csm),
   [certificate (PDF)](certifications/CSM-Certificate.pdf)
 
+### Course badges
+
+<a href="https://www.credly.com/badges/280b0280-fc18-4b28-a18c-c68f5b394687/public_url"><img src="certifications/Cisco-Intro-to-Cybersecurity-badge.png" alt="Cisco Introduction to Cybersecurity badge" width="80"></a>
+
+- **Introduction to Cybersecurity**, Cisco Networking Academy, issued
+  November 2026:
+  [verify on Credly](https://www.credly.com/badges/280b0280-fc18-4b28-a18c-c68f5b394687/public_url)
+
 ## TryHackMe
 
 I build hands-on security skills on TryHackMe. Figures as of 15 October 2026.
