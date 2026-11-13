@@ -1,6 +1,6 @@
 # One Key to Run Them All: How I Turned LazyVim into a Multi-Language Coding Playground
 
-*By James Pearson · 18 October 2026 · ~13 min read*
+*By James Pearson · October 18, 2026 · ~13 min read*
 
 > **Want to build this yourself?** This post is the story: what I built, why, and what broke along the way. If you'd rather skip straight to the step-by-step setup, head to the companion guide: **[Build Your Own LazyVim Coding Playground](https://github.com/james-s-pearson/Cybersecurity-Portfolio/blob/main/foundations/lazyvim-ide/lazyvim-playground-howto.md)**.
 

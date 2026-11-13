@@ -45,7 +45,7 @@ Shortcode: :tada: and typed: ✅ 🚀
 ## An alert
 
 > [!NOTE]
-> GitHub draws this as a coloured "Note" box. The browser preview shows it as
+> GitHub draws this as a colored "Note" box. The browser preview shows it as
 > a plain quote that starts with `[!NOTE]`. That is expected.
 
 ## Footnote

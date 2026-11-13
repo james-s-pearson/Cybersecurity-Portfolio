@@ -1,8 +1,8 @@
 # Build Your Own LazyVim Coding Playground: One Key to Run Python, C, Java, Web, JavaScript & JSON
 
-*By James Pearson · 18 October 2026 · Checked on macOS (Apple Silicon) · Linux notes included, but not fully verified*
+*By James Pearson · October 18, 2026 · Checked on macOS (Apple Silicon) · Linux notes included, but not fully verified*
 
-*Last updated: 18 October 2026*
+*Last updated: October 18, 2026*
 
 > **New here?** This is the hands-on guide. For the story behind it (why I built it and what broke along the way), read **[One Key to Run Them All](https://github.com/james-s-pearson/Cybersecurity-Portfolio/blob/main/foundations/lazyvim-ide/lazyvim-playground-story.md)**.
 
@@ -572,9 +572,9 @@ Open a Python shell first with `Space r v` (or `Space r h` for a horizontal spli
 
 F5 on `index.html` starts a Live Server and opens the page in your browser. The page has no external links or trackers.
 
-✅ **Expect:** your browser opens the page. Edit the heading in `index.html`, save with `:w`, and the page refreshes by itself. Then open `style.css` and find the line that says `--accent-color: #00b4d8;` (line 4). Change the colour, for example to `#e63946`. Keep the `#` and the `;`, change only that line, and save. The heading colour should change without a reload.
+✅ **Expect:** your browser opens the page. Edit the heading in `index.html`, save with `:w`, and the page refreshes by itself. Then open `style.css` and find the line that says `--accent-color: #00b4d8;` (line 4). Change the color, for example to `#e63946`. Keep the `#` and the `;`, change only that line, and save. The heading color should change without a reload.
 
-> ⚠️ Don't edit the `color: var(--accent-color);` line further down the file. Replacing that with a plain colour breaks the link to the variable, and the heading turns the wrong colour.
+> ⚠️ Don't edit the `color: var(--accent-color);` line further down the file. Replacing that with a plain color breaks the link to the variable, and the heading turns the wrong color.
 
 To stop the server, move into its terminal pane and press `Ctrl + c`, or press F6 to close that pane.
 
@@ -672,7 +672,7 @@ The cost: previews stay open until you close their tabs or press `Space c p`, so
 **Known limitations.**
 
 - The browser preview shows `> [!NOTE]` and `> [!WARNING]` callouts as plain quotes. The editor view shows them as "Note" and "Warning" boxes. I'm accepting that for now, and I expect to replace this plugin with a more actively maintained one later (something like `live-server`, which the HTML runner already uses).
-- The last commit to `markdown-preview.nvim` was in October 2023, as I write this (18 October 2026). It worked on my clean test build.
+- The last commit to `markdown-preview.nvim` was in October 2023, as I write this (October 18, 2026). It worked on my clean test build.
 
 **Try it.** Open the Markdown files in [`lazyvim-testfiles`](https://github.com/james-s-pearson/Cybersecurity-Portfolio/tree/main/foundations/lazyvim-ide/lazyvim-testfiles), `hello.md`, `notes-a.md` and `notes-b.markdown`, and press F5 on each. The test files have no images, so also try F5 on a `.md` or `.markdown` file of your own that includes one. An image appears when its path is relative to the Markdown file, and the editor view shows only an icon. If an image doesn't appear, check the path first.
 

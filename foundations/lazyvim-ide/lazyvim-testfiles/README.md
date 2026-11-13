@@ -42,9 +42,9 @@ result with the list below.
 - `valid.json`: JSON. F5 prints `JSON Structure is Valid!`.
 - `index.html` and `style.css`: a web page. F5 on `index.html` starts a Live
   Server and opens it in your browser. Edit the heading, save, and the page
-  should refresh by itself. Then change the accent colour on line 4 of
+  should refresh by itself. Then change the accent color on line 4 of
   `style.css` (`--accent-color: #00b4d8;`), for example to `#e63946`. Keep the
-  `#` and the `;`, change only that line, save, and the heading colour should
+  `#` and the `;`, change only that line, save, and the heading color should
   change.
 - `notes-a.md` and `notes-b.markdown`: Markdown. F5 saves the file and opens
   a live preview in your browser (a table, a task list, a code block and a
