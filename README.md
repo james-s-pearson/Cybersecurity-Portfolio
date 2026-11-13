@@ -91,6 +91,11 @@ commit history shows the work as it happens.
   agile, hybrid and technical (IT and security) projects. I designed and
   directed it, an AI assistant generated it, and I review and edit it. Version
   0.3, under its own licence (see [Licence](#licence)).
+- **[Released software](released-software/)**: open-source software I
+  designed, directed and released, each with a write-up: Treelights, an
+  Obsidian plugin for code highlighting with security features, and Neon
+  Alley, an Obsidian theme. Both are listed in Obsidian's community
+  directory. An AI assistant generated the code, and I tested every version.
 
 ## Roadmap
 
@@ -126,6 +131,9 @@ Alongside these:
   case study, and the control evidence tracker, risk register and
   vulnerability reports, which produce the status reports and risk views a
   security project manager works with.
+  The released software, Treelights and Neon Alley, shows the same
+  discipline on real public releases: requirements, release gates and an
+  external review.
 - **Customer-facing roles at security and GRC vendors:** Project Manager in a
   Box and the case study's customer success plan (running a deployment as a
   project), the control and risk projects (what GRC platforms do for
@@ -134,6 +142,8 @@ Alongside these:
   and password policy projects.
 - **SOC:** the vulnerability report and failed-login detector, plus my TryHackMe
   work.
+  Treelights also flags indicators of compromise, leaked secrets and hidden
+  characters in security notes.
 
 Each project's README will also list the Security+ topics it builds.
 
