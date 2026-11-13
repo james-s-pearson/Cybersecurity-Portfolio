@@ -37,7 +37,7 @@ Reading the notes first makes the code easier to follow.
 5. **Ex05, birth month:** parsing DD-MM-YYYY with `split`, range checks, and a
    negative-index bug caught and fixed.
 6. **Ex06, guest list:** lists, `append`, `", ".join`, a confirm step, and
-   capitalising names without breaking them.
+   capitalizing names without breaking them.
 7. **Ex07, dictionary lookup:** `.get` with a default, listing the keys, and
    calculating an age from a date.
 8. **Ex08, older or younger:** an age calculated from a birthday inside a

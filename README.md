@@ -2,7 +2,7 @@
 
 Original projects and learning work that apply project management and Python
 to everyday security work: running security projects, tracking controls,
-managing risk, prioritising vulnerabilities and analysing logs. They are built
+managing risk, prioritizing vulnerabilities and analyzing logs. They are built
 in stages, tested against safe sample data, and documented with notes on what
 went wrong and what I learned.
 
@@ -19,7 +19,7 @@ This repository shows both halves of that combination: security work run as a
 well-managed project, and security knowledge applied with code.
 
 My hands-on cybersecurity learning includes working through security
-fundamentals, practising on TryHackMe and building a coding environment for the
+fundamentals, practicing on TryHackMe and building a coding environment for the
 languages and formats that show up throughout security work. [The story of
 building it](foundations/lazyvim-ide/lazyvim-playground-story.md) shows how I
 test, document and use AI along the way.
@@ -63,7 +63,7 @@ used.
 
 ## TryHackMe
 
-I build hands-on security skills on TryHackMe. Figures as of 15 October 2026.
+I build hands-on security skills on TryHackMe. Figures as of October 15, 2026.
 
 - Profile: [tryhackme.com/p/JamesPearson](https://tryhackme.com/p/JamesPearson)
 - Global ranking: top 2%
@@ -72,9 +72,9 @@ I build hands-on security skills on TryHackMe. Figures as of 15 October 2026.
 - Activity: 1,830 events in the last year
 - Learning paths completed (certificates of completion):
   - [Cyber Security 101 (THM-N520VATOUS)](https://tryhackme-certificates.s3-eu-west-1.amazonaws.com/THM-N520VATOUS.pdf),
-    14 August 2026, 45 h 23 min
+    August 14, 2026, 45 h 23 min
   - [Pre Security (THM-JG3XUUDTJM)](https://tryhackme-certificates.s3-eu-west-1.amazonaws.com/THM-JG3XUUDTJM.pdf),
-    3 December 2025, 7 h 38 min
+    December 3, 2025, 7 h 38 min
 
 ## Projects
 
@@ -162,7 +162,7 @@ Each project's README will also list the Security+ topics it builds.
 - Anything that touches the network runs against my own machine, or against
   systems I have written permission to test.
 - No secrets, keys or real credentials are ever committed.
-- Any bug bounty work will follow each programme's published scope and rules,
+- Any bug bounty work will follow each program's published scope and rules,
   and findings will be reported responsibly.
 - TryHackMe write-ups will cover retired rooms only, and will never include
   flags, answers or exam material.
@@ -179,7 +179,7 @@ Each project's README explains how to run it.
 
 ## Licence
 
-Released under the [MIT Licence](LICENSE), except the
+Released under the [MIT License](LICENSE), except the
 [`project-manager-in-a-box`](project-manager-in-a-box/) folder, which has its
-own licence (CC BY-NC-SA 4.0) in
+own license (CC BY-NC-SA 4.0) in
 [`LICENSE.md`](project-manager-in-a-box/LICENSE.md) in that folder.

@@ -36,7 +36,7 @@ attempt, my corrected code, and notes on what was wrong and what I learned.
 
 Python and a good environment only matter if I can point them at real problems.
 Bug hunting is how I plan to do that: investigating real-world software bugs,
-within each programme's published scope and rules. Before touching any real
+within each program's published scope and rules. Before touching any real
 target I wanted a separate, tidy place to work from, so that my practice-lab
 habits never mix with real-world work. I turned a Kali Linux VM into a clean,
 snapshotted hunting machine, set up Burp Suite and a dedicated browser profile,
@@ -68,5 +68,5 @@ The exercises build the habits that security scripts depend on: validating
 input before using it, handling errors without crashing, reading structured
 data, and calling web APIs with timeouts and retries. The security projects on
 the portfolio's roadmap build on the same habits. The bug hunting VM is where I
-plan to apply them to real software, always within each programme's published
+plan to apply them to real software, always within each program's published
 scope and rules.
