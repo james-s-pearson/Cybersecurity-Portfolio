@@ -49,7 +49,7 @@ that are now in the guide.
 
 The guide is here:
 [clean-hunting-vm](clean-hunting-vm/clean-hunting-vm-guide.md), with a blank
-[programme notes template](clean-hunting-vm/programme-notes-template.md).
+[program notes template](clean-hunting-vm/program-notes-template.md).
 
 ## How AI was used
 

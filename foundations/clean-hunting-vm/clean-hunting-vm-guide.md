@@ -1,12 +1,12 @@
 # Building a clean Kali VM for bug hunting
 
 A step-by-step guide to turning a Kali VM into a tidy, separate bench for bug
-hunting, for example on bug bounty programmes, with notes on the snags I hit.
+hunting, for example on bug bounty programs, with notes on the snags I hit.
 Written for VMware Fusion on an Apple Silicon Mac. The ideas carry over to
 other hypervisors.
 
 > **How this was made:** drafted with the help of Claude Code, an AI assistant,
-> from a real setup session on 24 October 2026, in which I cloned and cleaned
+> from a real setup session on October 24, 2026, in which I cloned and cleaned
 > the VM following its guidance. The commands come from that session. Check
 > every step against your own system before you rely on it.
 >
@@ -21,13 +21,13 @@ other hypervisors.
 Three goals shape every step below:
 
 - **Separation.** Your lab habits (practice-room VPN files, saved logins, old
-  notes) stay out of work on real programmes.
-- **Accountability.** Some programmes ask which IP address you tested from, so
+  notes) stay out of work on real programs.
+- **Accountability.** Some programs ask which IP address you tested from, so
   you should know what your machine looks like from the outside.
 - **Undo.** A snapshot lets you roll back to a known-good state in seconds.
 
 Only test systems you own, deliberately vulnerable labs, or targets that are
-explicitly in scope for a programme you have joined. Read each programme's
+explicitly in scope for a program you have joined. Read each program's
 policy first. Nothing in this guide touches a live target.
 
 ## What you need
@@ -188,7 +188,7 @@ Keep only your new profile's folder, plus Firefox's own `installs.ini`,
 
 ## Step 4: Know your outside address, then snapshot
 
-1. Make sure no VPN is running, unless a programme allows one.
+1. Make sure no VPN is running, unless a program allows one.
 2. Check what the internet sees, for example `curl -s https://ifconfig.me`.
    This uses a third-party service that echoes your address back. On a home
    connection, the address is usually your router's, and it can change. Note the
@@ -206,7 +206,7 @@ Keep your address in private notes, not in anything you publish.
 
 Burp Suite sits between your browser and a site, so you can see every request.
 
-1. Start Burp. Read and accept the licence agreement if you agree with it. The
+1. Start Burp. Read and accept the license agreement if you agree with it. The
    version I used (Community Edition 2026.8) then asks which edition to
    continue with: choose **Community Edition**. Pick **Temporary project in
    memory** (project files are a Professional feature), then **Use Burp
@@ -280,18 +280,18 @@ lesson: scope controls what you see as well as what you test.
 **Keep the notes outside any git repository, even a private one.** A private
 repository that you push still stores your notes on the hosting service, and a
 stray `git add .` can sweep them in. Use a plain folder such as
-`~/BugHunt-Private/`, with one sub-folder per programme, and keep it out of any
+`~/BugHunt-Private/`, with one sub-folder per program, and keep it out of any
 folder you open with an AI coding assistant, since those tools can read what is
 in their working folder.
 
 Make sure disk encryption is on, and decide on purpose whether the folder syncs
 to a cloud service. Treat unfixed finding details as confidential: most
-programmes forbid discussing them outside the programme, and some have rules
+programs forbid discussing them outside the program, and some have rules
 about AI tools.
 
-A blank template for per-programme notes is in
-[programme-notes-template.md](programme-notes-template.md). Copy it for each
-programme and fill it in from the policy page before you test anything.
+A blank template for per-program notes is in
+[program-notes-template.md](program-notes-template.md). Copy it for each
+program and fill it in from the policy page before you test anything.
 
 To pull evidence out for a report, deliberately and once:
 
@@ -351,7 +351,7 @@ shell loops, which are easy to mistype.
 
 ## Where to go next
 
-Learn to read requests and responses fluently, then practise on targets built to
+Learn to read requests and responses fluently, then practice on targets built to
 be attacked (such as PortSwigger's Web Security Academy or OWASP Juice Shop),
-before choosing a programme with a short, clear scope. Read its policy first,
+before choosing a program with a short, clear scope. Read its policy first,
 every time.
