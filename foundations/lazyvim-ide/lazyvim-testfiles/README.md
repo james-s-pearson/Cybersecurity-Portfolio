@@ -5,9 +5,9 @@ coding environment described in [Foundations](../../README.md) works for each
 language. They are throwaway tests, not examples of my coding. An AI assistant
 helped draft them, as it did the setup they test.
 
-I checked every file on macOS (Python 3.13, Node 26, Java 21 and gcc). The
-runner should also work on Linux (an earlier partial test on Ubuntu-like Linux
-needed one shell fix, described in Step 4 of the [companion
+I checked every file on macOS (Python 3.13, Node 26, Java 21, gcc and Bash
+5.3). The runner should also work on Linux (an earlier partial test on
+Ubuntu-like Linux needed one shell fix, described in Step 4 of the [companion
 guide](https://github.com/james-s-pearson/Cybersecurity-Portfolio/blob/main/foundations/lazyvim-ide/lazyvim-playground-howto.md)),
 but the install steps and these exact files were not verified there. Windows
 is not covered.
@@ -38,6 +38,9 @@ result with the list below.
 - `hello.js`: JavaScript through Node. F5 prints a start line,
   `Status: Success`, your Node version, `Unicode Check: ✅ 🚀` (if the two
   symbols show as boxes, your terminal font needs fixing), a timestamp, a
+  passed logic check and an end line. It has a commented-out error line.
+- `hello.sh`: Bash. F5 prints a start line, `Status: Success`, your Bash
+  version, `Unicode Check: ✅ 🚀`, a timestamp, `Math Check: 5 + 10 = 15`, a
   passed logic check and an end line. It has a commented-out error line.
 - `valid.json`: JSON. F5 prints `JSON Structure is Valid!`.
 - `index.html` and `style.css`: a web page. F5 on `index.html` starts a Live
@@ -90,10 +93,10 @@ Both are deliberately messy but valid. In this setup, saving does not format
 
 ## Things to know
 
-- The first time you press F5 on a C, Java, JavaScript or JSON file with no
-  shell open, the runner opens a new shell split for you.
-- `hello.py` and `hello.js` each have a commented-out error line. Remove the
-  comment markers to see how your setup shows a failed run.
+- The first time you press F5 on a C, Java, JavaScript, Bash or JSON file
+  with no shell open, the runner opens a new shell split for you.
+- `hello.py`, `hello.js` and `hello.sh` each have a commented-out error line.
+  Remove the comment markers to see how your setup shows a failed run.
 - Compiled output is ignored by Git (see `.gitignore`), so running the tests
   does not dirty your clone.
 - You need `gcc`, `javac`, `node`, `live-server` and `ipython` installed for

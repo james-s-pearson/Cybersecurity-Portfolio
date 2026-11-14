@@ -24,7 +24,7 @@ return {
       -- Find an active terminal channel (Split OR Float).
       -- kind "python" only accepts a visible IPython terminal (nil if none, so F5 prints its error message).
       -- kind "shell" only accepts a visible terminal that is not IPython, LazyGit or live-server (nil if none, so
-      -- the caller opens a new zsh split). With no kind, the first terminal found is used (the old behaviour).
+      -- the caller opens a new zsh split). With no kind, the first terminal found is used (the old behavior).
       local function get_active_terminal_job_id(kind)
         local fallback
         for _, buf in ipairs(vim.api.nvim_list_bufs()) do
@@ -63,7 +63,7 @@ return {
         vim.b.slime_config = { jobid = term_chan }
       end, { desc = "Python Shell: Horizontal Split" })
 
-      -- 3. SMART MULTI-LANGUAGE F5 KEYMAP (Python, C, Java, HTML, JS, JSON, & Markdown)
+      -- 3. SMART MULTI-LANGUAGE F5 KEYMAP (Python, C, Java, HTML, JS, Bash, JSON, & Markdown)
       vim.keymap.set("n", "<F5>", function()
         vim.cmd("w") -- Save the current file
 
@@ -173,6 +173,22 @@ return {
             vim.cmd("wincmd p")
             vim.b.slime_config = { jobid = term_chan }
             vim.fn["slime#send"](js_run_cmd)
+          end
+
+          -- BASH WORKFLOW (Run the script with bash in a shell terminal)
+        elseif file_ext == "sh" or file_ext == "bash" then
+          local bash_run_cmd = string.format("cd '%s' && clear && bash '%s'\n", filedir, filetail)
+          local target_chan = get_active_terminal_job_id("shell")
+          if target_chan then
+            vim.b.slime_config = { jobid = target_chan }
+            vim.fn["slime#send"](bash_run_cmd)
+          else
+            vim.cmd("vsplit | terminal zsh")
+            local term_buf = vim.api.nvim_get_current_buf()
+            local term_chan = vim.b[term_buf].terminal_job_id
+            vim.cmd("wincmd p")
+            vim.b.slime_config = { jobid = term_chan }
+            vim.fn["slime#send"](bash_run_cmd)
           end
 
           -- MARKDOWN WORKFLOW (Open a browser preview; each Markdown file gets its own page)

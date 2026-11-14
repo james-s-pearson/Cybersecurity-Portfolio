@@ -33,6 +33,7 @@ Here's the finished feature set. The headline is **F5**: open any supported file
 | **Java** | Compiles into a temporary folder, runs, then deletes that folder | `javac` → `java` → remove the temporary folder |
 | **HTML / CSS** | Launches a local web server and opens a browser preview that auto-refreshes on save | `live-server` |
 | **JavaScript** | Runs the script | Node.js |
+| **Bash** | Runs the script | `bash` |
 | **JSON** | Checks the file is valid and points to any syntax error | Node.js parser |
 
 On top of the one-key runner, I added:
@@ -199,7 +200,10 @@ Using it every day surfaced things a short test run never would. Here's what I f
 A few additions made day-to-day coding noticeably smoother:
 
 - **Undotree.** It shows my edit history as a tree, which made navigating undos much easier while I wrote code.
-- **A few extras beyond my six languages**, for shell scripts, Go, Git, spell-checking code and an extra CSS toolchain.
+- **Images inside Neovim.** Opening a photo or screenshot shows the picture instead of the raw file.
+- **A few extras beyond my seven languages**, for Go, Git, spell-checking code and an extra CSS toolchain.
+
+**F5 for Bash.** Bash became the seventh language. F5 on a `.sh` file runs it with `bash` in a shell split, the same way JavaScript runs, and a Bash language server underlines mistakes as I type. The how-to guide covers it in Steps 5 and 7.
 
 **F5 for Markdown.** I wanted Markdown files to work like code does: one key. Now F5 on a `.md` or `.markdown` file opens a live preview in the browser that updates as you type. Each file gets its own tab, and one shortcut closes them all.
 
@@ -243,9 +247,9 @@ These are all optional. The how-to guide covers them in [Step 8](https://github.
 ## What's next
 
 - Add F5 support for plain `python3` scripts in a future update (today it needs IPython, since `%run` only works there).
-- Bring the "keep earlier output" separator to C, Java, JavaScript and JSON, which still clear the screen first.
+- Bring the "keep earlier output" separator to C, Java, JavaScript, Bash and JSON, which still clear the screen first.
 - Replace `live-server` with something actively maintained.
-- Add support for more languages, such as Bash, Go, and Rust.
+- Add support for more languages, such as Go and Rust.
 - Use the playground for what it was built for: working through coding courses and security labs with less setup friction.
 
 ---

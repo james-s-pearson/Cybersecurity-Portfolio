@@ -1,12 +1,12 @@
-# Build Your Own LazyVim Coding Playground: One Key to Run Python, C, Java, Web, JavaScript & JSON
+# Build Your Own LazyVim Coding Playground: One Key to Run Python, C, Java, Web, JavaScript, Bash & JSON
 
 *By James Pearson · October 18, 2026 · Checked on macOS (Apple Silicon) · Linux notes included, but not fully verified*
 
-*Last updated: October 18, 2026*
+*Last updated: November 13, 2026*
 
 > **New here?** This is the hands-on guide. For the story behind it (why I built it and what broke along the way), read **[One Key to Run Them All](https://github.com/james-s-pearson/Cybersecurity-Portfolio/blob/main/foundations/lazyvim-ide/lazyvim-playground-story.md)**.
 
-By the end of this guide you'll have a terminal-based editor where you open a file in any of six languages, press **F5**, and see the result in a split next to your code. Plan on about **60–90 minutes**, most of it waiting on installs. I have a special interest in cybersecurity, and I built this as a place to practice the languages and formats that show up throughout the field. But you don't need a security background to follow along.
+By the end of this guide you'll have a terminal-based editor where you open a file in any of seven languages, press **F5**, and see the result in a split next to your code. Plan on about **60–90 minutes**, most of it waiting on installs. I have a special interest in cybersecurity, and I built this as a place to practice the languages and formats that show up throughout the field. But you don't need a security background to follow along.
 
 ![Python file and IPython output side by side](images/01-playground-python.png)
 
@@ -25,6 +25,7 @@ By the end of this guide you'll have a terminal-based editor where you open a fi
 | Java | Compiles with `javac` into a temporary folder, runs, then deletes that folder |
 | HTML / CSS | Starts a live-reloading browser preview |
 | JavaScript | Runs with Node.js |
+| Bash | Runs the script with `bash` |
 | JSON | Validates syntax and reports errors |
 
 Plus: persistent IPython shell splits, send-a-line, one-key close, force-stop, window hopping, and formatters for every language. A full shortcut cheat sheet is at the end.
@@ -40,7 +41,7 @@ Plus: persistent IPython shell splits, send-a-line, one-key close, force-stop, w
 - `zsh` as your shell (the macOS default). Linux users on `bash`, see the 🐧 note in Step 5.
 
 **Versions I tested with (as of October 2026):**
-- Neovim: v0.12.5 · Python: 3.13.7 · IPython: 9.5.0 · Java: OpenJDK 21.0.12.1 LTS (installed via Temurin 21) · Node.js: v26.9.0
+- Neovim: v0.12.5 · Python: 3.13.7 · IPython: 9.5.0 · Java: OpenJDK 21.0.12.1 LTS (installed via Temurin 21) · Node.js: v26.9.0 · Bash: 5.3.20 (Homebrew; added November 2026)
 
 ---
 
@@ -108,7 +109,7 @@ Extras I use:
 | `formatting.prettier` | Prettier for web files and Markdown (`prettier`) |
 | `editor.mini-diff` | Inline diff markers |
 | `util.dot`, `util.mini-hipatterns` | Dotfile support, color highlighting |
-You may see a few more packages in `:Mason` than the table lists (on my clean test build: `bash-language-server`, `lua-language-server`, `shellcheck`, `shfmt` and `stylua`). They are fine to leave installed.
+You may see a few more packages in `:Mason` than the table lists (on my clean test build: `lua-language-server` and `stylua`, plus `bash-language-server`, `shellcheck` and `shfmt`, which the Bash setup in Step 5 uses). They are fine to leave installed.
 
 ![LazyExtras list](images/03-lazyextras.png)
 
@@ -150,6 +151,8 @@ pip3 install ipython
 > 💡 **If `pip3 install ipython` fails** with an `externally-managed-environment` error, install IPython through Homebrew instead: `brew install ipython`. Current Homebrew Python blocks global `pip` installs (a protection called PEP 668), so readers on current Homebrew Python could hit this error.
 
 **C:** already installed with the Xcode command-line tools in Step 1. Check with `gcc --version`.
+
+**Bash:** already on your Mac. macOS includes an older Bash (3.2), which runs the test file fine. I use a current version from Homebrew (`brew install bash`). Check with `bash --version`.
 
 **Java** (Eclipse Temurin JDK 21):
 ```zsh
@@ -207,7 +210,7 @@ return {
       -- Find an active terminal channel (Split OR Float).
       -- kind "python" only accepts a visible IPython terminal (nil if none, so F5 prints its error message).
       -- kind "shell" only accepts a visible terminal that is not IPython, LazyGit or live-server (nil if none, so
-      -- the caller opens a new zsh split). With no kind, the first terminal found is used (the old behaviour).
+      -- the caller opens a new zsh split). With no kind, the first terminal found is used (the old behavior).
       local function get_active_terminal_job_id(kind)
         local fallback
         for _, buf in ipairs(vim.api.nvim_list_bufs()) do
@@ -246,7 +249,7 @@ return {
         vim.b.slime_config = { jobid = term_chan }
       end, { desc = "Python Shell: Horizontal Split" })
 
-      -- 3. SMART MULTI-LANGUAGE F5 KEYMAP (Python, C, Java, HTML, JS, JSON, & Markdown)
+      -- 3. SMART MULTI-LANGUAGE F5 KEYMAP (Python, C, Java, HTML, JS, Bash, JSON, & Markdown)
       vim.keymap.set("n", "<F5>", function()
         vim.cmd("w") -- Save the current file
 
@@ -358,6 +361,22 @@ return {
             vim.fn["slime#send"](js_run_cmd)
           end
 
+          -- BASH WORKFLOW (Run the script with bash in a shell terminal)
+        elseif file_ext == "sh" or file_ext == "bash" then
+          local bash_run_cmd = string.format("cd '%s' && clear && bash '%s'\n", filedir, filetail)
+          local target_chan = get_active_terminal_job_id("shell")
+          if target_chan then
+            vim.b.slime_config = { jobid = target_chan }
+            vim.fn["slime#send"](bash_run_cmd)
+          else
+            vim.cmd("vsplit | terminal zsh")
+            local term_buf = vim.api.nvim_get_current_buf()
+            local term_chan = vim.b[term_buf].terminal_job_id
+            vim.cmd("wincmd p")
+            vim.b.slime_config = { jobid = term_chan }
+            vim.fn["slime#send"](bash_run_cmd)
+          end
+
           -- MARKDOWN WORKFLOW (Open a browser preview; each Markdown file gets its own page)
         elseif file_ext == "md" or file_ext == "markdown" then
           -- Open only, never toggle: toggling one file stops the server and closes every preview
@@ -445,16 +464,45 @@ return {
 
 > 🐧 **Linux (bash users):** replace each `terminal zsh` in the file above with `terminal bash`.
 
+### Bash support (`bash.lua`)
+
+F5 already runs Bash scripts with the file above. For error checking and formatting while you write Bash, add one more file:
+
+```zsh
+nvim ~/.config/nvim/lua/plugins/bash.lua
+```
+
+```lua
+return {
+  -- Bash language server (bash-language-server is already installed through Mason; it also runs shellcheck)
+  {
+    "neovim/nvim-lspconfig",
+    opts = {
+      servers = {
+        bashls = {},
+      },
+    },
+  },
+  -- shfmt formatting for <leader>cf is already set by LazyVim; Mason keeps the tools installed
+  {
+    "mason-org/mason.nvim",
+    opts = { ensure_installed = { "bash-language-server", "shellcheck", "shfmt" } },
+  },
+}
+```
+
+Restart Neovim. Mason installs `bash-language-server`, which underlines mistakes as you type and uses `shellcheck` to explain them. `Space c f` formats the file with `shfmt` (Step 6).
+
 ### Known limitations
 
 - F5 finds your Python shell by the command it was started with, so an IPython you start by hand inside a plain shell isn't recognized. Open it with `Space r v` or `Space r h`.
 - A plain `python3` shell doesn't work with F5, because `%cd` and `%run` are IPython features. Support for it is planned for a future update.
 - Paths that contain an apostrophe, and Java files with a `package` line, aren't handled.
-- C, Java, JavaScript and JSON still clear the screen before each run. Only Python keeps earlier output.
+- C, Java, JavaScript, Bash and JSON still clear the screen before each run. Only Python keeps earlier output.
 
 ### How the runner works (in plain English)
 
-- **`get_active_terminal_job_id()`** looks through open windows for the right terminal. For Python it wants a *visible* IPython window. For C, Java, JavaScript and JSON it wants a visible plain shell (not IPython, LazyGit or the live-server window). If it finds none, F5 prints a message (Python) or opens a new split (the others). "Visible" matters: pressing `Ctrl + /` a second time hides the floating terminal while its shell keeps running, and a command sent there would show nothing.
+- **`get_active_terminal_job_id()`** looks through open windows for the right terminal. For Python it wants a *visible* IPython window. For C, Java, JavaScript, Bash and JSON it wants a visible plain shell (not IPython, LazyGit or the live-server window). If it finds none, F5 prints a message (Python) or opens a new split (the others). "Visible" matters: pressing `Ctrl + /` a second time hides the floating terminal while its shell keeps running, and a command sent there would show nothing.
 - **vim-slime** "types" a command into that terminal for you.
 - **The F5 function** reads the file extension and picks a recipe. Each language has its own branch, so changing one can't break another.
 - **Python is the special case.** It needs an IPython shell open first (`Space r v`), because that's what lets variables stay in memory after a run. Instead of clearing the screen, F5 prints a separator line with the file name and time, so earlier runs stay in the scrollback. Type `clear` when you want a blank screen.
@@ -530,7 +578,7 @@ cd Cybersecurity-Portfolio/foundations/lazyvim-ide/lazyvim-testfiles
 
 or on the repository page choose **Code → Download ZIP**, unzip it, and open the `foundations/lazyvim-ide/lazyvim-testfiles` folder.
 
-Open each file below in Neovim and press **F5**. If a test fails because a tool is missing (`gcc`, `javac`, `node`, `live-server` or `ipython`), go back to Step 4 and install it; the file is not the problem. The first time you press F5 on a C, Java, JavaScript or JSON file with no shell open, the runner opens a new shell split for you.
+Open each file below in Neovim and press **F5**. If a test fails because a tool is missing (`gcc`, `javac`, `node`, `live-server` or `ipython`), go back to Step 4 and install it; the file is not the problem. The first time you press F5 on a C, Java, JavaScript, Bash or JSON file with no shell open, the runner opens a new shell split for you.
 
 ### Python (`hello.py`)
 
@@ -561,6 +609,10 @@ Open a Python shell first with `Space r v` (or `Space r h` for a horizontal spli
 ### JavaScript (`hello.js`)
 
 ✅ **Expect:** a start line, `Status: Success`, your Node version, `Unicode Check: ✅ 🚀`, a timestamp, a passed logic check and an end line. If the two symbols show as boxes, your terminal font needs fixing (see Step 1).
+
+### Bash (`hello.sh`)
+
+✅ **Expect:** a start line, `Status: Success`, your Bash version, `Unicode Check: ✅ 🚀`, a timestamp, a math check (`5 + 10 = 15`), a passed logic check and an end line.
 
 ### JSON (`valid.json`)
 
@@ -632,7 +684,7 @@ The script writes one tiny file next to itself and deletes it, so nothing is lef
 
 ## Step 8 (optional): Quality-of-life add-ons
 
-Everything above gives you the full one-key playground. Step 8 is optional. It covers F5 for Markdown files, one plugin I added after weeks of daily use because it made coding smoother, plus a note on other tools I use.
+Everything above gives you the full one-key playground. Step 8 is optional. It covers F5 for Markdown files, viewing images inside Neovim, one plugin I added after weeks of daily use because it made coding smoother, plus a note on other tools I use.
 
 ### F5 for Markdown: a live preview in your browser
 
@@ -692,9 +744,29 @@ return {
 
 Restart Neovim, then press `Space u u` to open or close the panel.
 
+### See images inside Neovim
+
+Open a photo or screenshot (`.png`, `.jpg` and similar) in Neovim and it shows the picture instead of the raw file. This uses the image viewer built into `snacks.nvim`, which comes with LazyVim but is off by default. It needs:
+
+- a terminal that supports the kitty graphics protocol. I tested it in Ghostty; the `snacks.nvim` documentation also lists Kitty, and WezTerm with limited support. Apple's Terminal app doesn't support it.
+- ImageMagick, for formats other than PNG: `brew install imagemagick`
+
+Create `~/.config/nvim/lua/plugins/snacks.lua`:
+
+```lua
+return {
+  "folke/snacks.nvim",
+  opts = {
+    image = { enabled = true },
+  },
+}
+```
+
+Restart Neovim and open an image file to try it. (My own `snacks.lua` in the `config` folder also has an empty picker section, which you can leave out.) I tried PDF previews too and left them out: they showed only the first page and needed Ghostscript, a large extra program, and the Mac's Preview app does that job better.
+
 ### Other tools on my machine
 
-Beyond the six languages in this guide, my Mason list also has tools for shell scripts (a fresh install already includes `bash-language-server`, `shellcheck` and `shfmt`), Go (`golangci-lint`), Git (`gitleaks`, `gitlint`), spell-checking code (`typos`), CSS (`csskit`, an all-in-one CSS toolchain written in Rust; I use Tailwind for my own CSS, so it's optional), and for JavaScript and Markdown: `eslint_d`, `prettierd`, `markdownlint` and `mdformat`. Installing a tool from Mason doesn't switch it on. On a clean build, formatting stayed on Prettier and the only active Markdown linter was `markdownlint-cli2`, so those four need their own configuration, which this guide doesn't cover. I'm not covering any of these tools here.
+Beyond the seven languages in this guide, my Mason list also has tools for Go (`golangci-lint`), Git (`gitleaks`, `gitlint`), spell-checking code (`typos`), CSS (`csskit`, an all-in-one CSS toolchain written in Rust; I use Tailwind for my own CSS, so it's optional), and for JavaScript and Markdown: `eslint_d`, `prettierd`, `markdownlint` and `mdformat`. Installing a tool from Mason doesn't switch it on. On a clean build, formatting stayed on Prettier and the only active Markdown linter was `markdownlint-cli2`, so those four need their own configuration, which this guide doesn't cover. I'm not covering any of these tools here.
 
 ---
 
@@ -706,7 +778,7 @@ Beyond the six languages in this guide, my Mason list also has tools for shell s
 | `F6` | Close the terminal you're in, or the newest visible runner terminal |
 | `Space r v` / `Space r h` | Open a Python (IPython) shell, vertical / horizontal |
 | `Ctrl+c Ctrl+c` | Send the current line to the shell |
-| `Ctrl + /` | Toggle LazyVim's terminal (it opens docked at the bottom of the screen). F5 can use it for C, Java, JavaScript and JSON, but not for Python (Python needs a shell opened with `Space r v` / `Space r h`) |
+| `Ctrl + /` | Toggle LazyVim's terminal (it opens docked at the bottom of the screen). F5 can use it for C, Java, JavaScript, Bash and JSON, but not for Python (Python needs a shell opened with `Space r v` / `Space r h`) |
 | `Ctrl + h / j / k / l` | Move to the window left / below / above / right (works from inside a terminal too) |
 | `Ctrl + o` (in a terminal) | Delete to end of line (sends `Ctrl + k` to the shell) |
 | `Ctrl + \` then `Ctrl + n` | Neovim's built-in way out of a terminal (two separate keystrokes; don't confuse with `Ctrl + /`) |
